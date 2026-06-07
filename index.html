@@ -747,6 +747,508 @@
       transform: translateY(0);
     }
 
+    /* ============ HERO BADGES ROW ============ */
+    .hero-badges-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      animation: fadeInUp 1.4s ease;
+    }
+    .hero-badge-item {
+      background: rgba(212,168,83,0.15);
+      border: 1px solid rgba(212,168,83,0.35);
+      color: var(--gold-light);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* ============ PLAN PER-MINUTE BADGE ============ */
+    .plan-per-minute-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+      color: white;
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-size: 0.97rem;
+      font-weight: 700;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      box-shadow: 0 3px 12px rgba(196,112,75,0.35);
+      letter-spacing: 0.2px;
+    }
+    .plan-card.featured .plan-per-minute-badge {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--navy);
+      box-shadow: 0 3px 14px rgba(212,168,83,0.45);
+    }
+    .plan-aulas-info {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+    .plan-card.featured .plan-aulas-info { color: rgba(245,240,235,0.45); }
+
+    /* ============ VALUE PER MINUTE BLOCK ============ */
+    .value-minute-section {
+      padding: 80px 24px;
+      background: var(--navy);
+      text-align: center;
+    }
+    .value-minute-section h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .value-minute-section h2 em { color: var(--gold); font-style: normal; }
+    .value-minute-subtitle {
+      font-size: 1.05rem;
+      color: rgba(245,240,235,0.65);
+      max-width: 620px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
+    }
+    .value-minute-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .value-minute-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 32px 40px;
+      min-width: 190px;
+      transition: all 0.3s ease;
+    }
+    .value-minute-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(196,112,75,0.4);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .value-minute-card.vm-highlight {
+      background: linear-gradient(135deg, var(--terracotta-dark) 0%, var(--terracotta) 100%);
+      border-color: transparent;
+      box-shadow: 0 8px 32px rgba(196,112,75,0.4);
+    }
+    .vm-plan-name {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(245,240,235,0.45);
+      margin-bottom: 12px;
+    }
+    .value-minute-card.vm-highlight .vm-plan-name { color: rgba(255,255,255,0.7); }
+    .vm-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .value-minute-card.vm-highlight .vm-price { color: white; }
+    .vm-label {
+      font-size: 0.85rem;
+      color: rgba(245,240,235,0.55);
+      margin-bottom: 8px;
+    }
+    .value-minute-card.vm-highlight .vm-label { color: rgba(255,255,255,0.8); }
+    .vm-plan-ref {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: rgba(245,240,235,0.35);
+      background: rgba(255,255,255,0.06);
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+    .value-minute-card.vm-highlight .vm-plan-ref {
+      color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.18);
+    }
+    .value-minute-tagline {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 20px 28px;
+      font-size: 1rem;
+      color: rgba(245,240,235,0.72);
+      line-height: 1.7;
+    }
+
+    /* ============ WHY PER MINUTE SECTION ============ */
+    .why-minute-section {
+      padding: 80px 24px;
+      background: var(--cream-dark);
+    }
+    .why-minute-section h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .why-minute-section h2 em { color: var(--terracotta); font-style: normal; }
+    .why-minute-subtitle {
+      text-align: center;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
+    }
+    .why-minute-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .why-card.why-featured {
+      background: var(--navy);
+      border: 2px solid var(--terracotta);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+    .why-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .why-card.why-featured .why-card-header { border-color: rgba(255,255,255,0.08); }
+    .why-plan-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--navy);
+    }
+    .why-card.why-featured .why-plan-name { color: var(--cream); }
+    .why-plan-price {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--terracotta-light);
+    }
+    .why-minutes-block {
+      background: rgba(196,112,75,0.07);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .why-card.why-featured .why-minutes-block { background: rgba(196,112,75,0.15); }
+    .why-minutes-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--terracotta);
+      line-height: 1;
+    }
+    .why-minutes-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .why-card.why-featured .why-minutes-label { color: rgba(245,240,235,0.55); }
+    .why-cost-block {
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .why-cost-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: white;
+      line-height: 1;
+    }
+    .why-cost-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 4px;
+    }
+    .why-includes { list-style: none; }
+    .why-includes li {
+      padding: 5px 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .why-card.why-featured .why-includes li { color: rgba(245,240,235,0.75); }
+    .why-includes li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ============ CALCULATOR SECTION ============ */
+    .calc-section {
+      padding: 80px 24px;
+      background: var(--cream);
+    }
+    .calc-section h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .calc-section h2 em { color: var(--terracotta); font-style: normal; }
+    .calc-subtitle {
+      text-align: center;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
+    }
+    .calc-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 920px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .calc-inputs {
+      background: white;
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .calc-input-group { margin-bottom: 32px; }
+    .calc-input-group:last-child { margin-bottom: 0; }
+    .calc-input-group > label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .calc-slider-wrap { position: relative; padding-bottom: 28px; }
+    .calc-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #F0E8DE;
+      outline: none;
+      cursor: pointer;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(196,112,75,0.4);
+      border: 3px solid white;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      box-shadow: 0 4px 16px rgba(196,112,75,0.55);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(196,112,75,0.4);
+      border: 3px solid white;
+    }
+    .calc-slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .calc-slider-ticks span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-align: center;
+      width: 20%;
+    }
+    .calc-slider-val {
+      display: inline-block;
+      background: rgba(196,112,75,0.1);
+      color: var(--terracotta);
+      border-radius: 50px;
+      padding: 5px 16px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .calc-duration-box {
+      background: var(--cream-dark);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .calc-duration-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .calc-duration-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .calc-duration-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-top: 3px;
+    }
+    .calc-result {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      text-align: center;
+      border: 2px solid var(--terracotta);
+      position: relative;
+      overflow: hidden;
+    }
+    .calc-result::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(196,112,75,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .calc-result-header {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: rgba(245,240,235,0.4);
+      margin-bottom: 8px;
+    }
+    .calc-result-plan {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.7rem;
+      color: var(--gold);
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+    .calc-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .calc-stat-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 16px 10px;
+    }
+    .calc-stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--terracotta-light);
+      line-height: 1;
+      margin-bottom: 4px;
+      transition: all 0.3s ease;
+    }
+    .calc-stat-lbl {
+      font-size: 0.73rem;
+      color: rgba(245,240,235,0.45);
+      line-height: 1.3;
+    }
+    .calc-price-block {
+      background: rgba(196,112,75,0.1);
+      border: 1px solid rgba(196,112,75,0.22);
+      border-radius: 14px;
+      padding: 20px 16px;
+      margin-bottom: 20px;
+    }
+    .calc-price-lbl {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(245,240,235,0.45);
+      margin-bottom: 10px;
+    }
+    .calc-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+    .calc-per-min {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+      color: white;
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .calc-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--green);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 0.97rem;
+      font-weight: 700;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-decoration: none;
+    }
+    .calc-cta-btn:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    }
+    .calc-cta-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
+    .calc-custom-note {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: rgba(245,240,235,0.42);
+      line-height: 1.5;
+      min-height: 20px;
+    }
+
     /* ============ RESPONSIVE ============ */
     @media (max-width: 900px) {
       .pricing-grid {
@@ -764,13 +1266,22 @@
       .comparison-table { font-size: 0.82rem; }
       .comparison-table thead th,
       .comparison-table tbody td { padding: 10px 12px; }
+      .calc-wrapper { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .calc-result { order: -1; }
     }
     @media (max-width: 600px) {
       .hero-plans { padding: 100px 16px 60px; min-height: 420px; }
       .hero-stats-row { gap: 24px; }
       .free-class-section, .pricing-section, .comparison-section,
       .guarantee-section, .testimonials-plans, .faq-section,
-      .final-cta-section { padding: 60px 16px; }
+      .final-cta-section, .value-minute-section, .why-minute-section,
+      .calc-section { padding: 60px 16px; }
+      .calc-inputs { padding: 28px 20px; }
+      .calc-result { padding: 28px 20px; }
+      .value-minute-grid { gap: 16px; }
+      .value-minute-card { padding: 24px 28px; min-width: 160px; }
+      .vm-price { font-size: 2.4rem; }
+      .why-minute-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
     }
   </style>
 </head>
@@ -790,9 +1301,9 @@
 <!-- HERO -->
 <section class="hero-plans">
   <div class="hero-plans-content">
-    <div class="hero-badge">Vagas Limitadas &mdash; Abril 2026</div>
-    <h1>Invista no Seu Futuro.<br>Fale Ingl&ecirc;s com <em>Confian&ccedil;a.</em></h1>
-    <p>Planos flex&iacute;veis, sem fidelidade, com professor particular de +8 anos de experi&ecirc;ncia. Escolha o plano ideal e comece com uma aula experimental 100% gratuita.</p>
+    <div class="hero-badge">Vagas Limitadas &mdash; Junho 2026</div>
+    <h1>Invista no Seu Futuro. Aprenda Ingl&ecirc;s com um Professor Particular por Apenas <em>R$ 0,66 por Minuto.</em></h1>
+    <p>Aulas individuais de 60 minutos, plano personalizado, foco em convers&atilde;o, carreira e entrevistas internacionais — com professor particular de +8 anos de experi&ecirc;ncia.</p>
     <div class="hero-stats-row">
       <div class="hero-stat">
         <div class="hero-stat-num">+8</div>
@@ -811,12 +1322,18 @@
         <div class="hero-stat-label">Fidelidade</div>
       </div>
     </div>
+    <div class="hero-badges-row">
+      <div class="hero-badge-item">&#11088; A partir de R$ 0,66/min</div>
+      <div class="hero-badge-item">&#11088; 60 minutos completos</div>
+      <div class="hero-badge-item">&#11088; Sem fidelidade</div>
+      <div class="hero-badge-item">&#11088; Aula experimental gr&aacute;tis</div>
+    </div>
   </div>
 </section>
 
 <!-- ANCHOR BAR -->
 <div class="anchor-bar">
-  <p>Aulas particulares a partir de <span>R$ 39,75/aula</span> &mdash; <s>R$ 89,90</s> &mdash; Primeira aula <strong style="color:#25D366;">GR&Aacute;TIS</strong></p>
+  <p>Professor particular a partir de <span>R$ 0,66 por minuto</span> &bull; 60 min de aula completa &bull; Aula experimental <strong style="color:#25D366;">GR&Aacute;TIS</strong></p>
 </div>
 
 <!-- FREE CLASS SECTION -->
@@ -853,6 +1370,39 @@
   </div>
 </section>
 
+<!-- VALUE PER MINUTE BLOCK -->
+<section class="value-minute-section">
+  <div class="container-lp">
+    <h2 class="fade-in">Quanto Vale <em>1 Minuto</em> do Seu Futuro?</h2>
+    <p class="value-minute-subtitle fade-in">Com os planos do Teacher Adilson, voc&ecirc; investe entre R$ 0,66 e R$ 0,82 por minuto para aprender uma habilidade que pode aumentar suas oportunidades profissionais, sal&aacute;rios e acesso ao mercado internacional.</p>
+
+    <div class="value-minute-grid">
+      <div class="value-minute-card fade-in">
+        <div class="vm-plan-name">Starter</div>
+        <div class="vm-price">R$ 0,82</div>
+        <div class="vm-label">por minuto</div>
+        <div class="vm-plan-ref">R$ 197/m&ecirc;s &bull; 4 aulas</div>
+      </div>
+      <div class="value-minute-card vm-highlight fade-in">
+        <div class="vm-plan-name">Flu&ecirc;ncia &mdash; Mais Popular</div>
+        <div class="vm-price">R$ 0,72</div>
+        <div class="vm-label">por minuto</div>
+        <div class="vm-plan-ref">R$ 347/m&ecirc;s &bull; 8 aulas</div>
+      </div>
+      <div class="value-minute-card fade-in">
+        <div class="vm-plan-name">Imers&atilde;o</div>
+        <div class="vm-price">R$ 0,66</div>
+        <div class="vm-label">por minuto</div>
+        <div class="vm-plan-ref">R$ 477/m&ecirc;s &bull; 12 aulas</div>
+      </div>
+    </div>
+
+    <p class="value-minute-tagline fade-in">
+      Voc&ecirc; tem acesso a um <strong style="color:var(--gold-light);">professor particular com +8 anos de experi&ecirc;ncia</strong>, aulas ao vivo de 60 minutos, material incluso, WhatsApp direto e plano personalizado — tudo por menos de <strong style="color:var(--gold-light);">R$ 1 por minuto</strong>.
+    </p>
+  </div>
+</section>
+
 <!-- PRICING SECTION -->
 <section class="pricing-section" id="planos">
   <div class="container-lp">
@@ -870,7 +1420,8 @@
         <div class="plan-price-block">
           <div class="plan-old-price">De R$ 247</div>
           <div class="plan-price"><sup>R$</sup>197<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/m&ecirc;s</span></div>
-          <div class="plan-per-aula">R$ 49,25 por aula</div>
+          <div class="plan-per-minute-badge">&#128293; Apenas R$ 0,82/minuto</div>
+          <div class="plan-aulas-info">4 aulas de 60 minutos por m&ecirc;s</div>
         </div>
         <ul class="plan-features">
           <li>4 aulas de 60 min/m&ecirc;s</li>
@@ -880,7 +1431,7 @@
           <li>Sem fidelidade</li>
         </ul>
         <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Teacher%20Adilson!%20Tenho%20interesse%20no%20Plano%20Starter." class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
-        <span class="plan-per-minute">R$ 0,82/min &bull; 10% off no PIX: R$ 177/m&ecirc;s</span>
+        <span class="plan-per-minute">10% off no PIX &bull; R$ 177/m&ecirc;s</span>
       </div>
 
       <!-- FLUÊNCIA (FEATURED) -->
@@ -892,7 +1443,8 @@
         <div class="plan-price-block">
           <div class="plan-old-price">De R$ 447</div>
           <div class="plan-price"><sup>R$</sup>347<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/m&ecirc;s</span></div>
-          <div class="plan-per-aula">R$ 43,37 por aula</div>
+          <div class="plan-per-minute-badge">&#128293; Apenas R$ 0,72/minuto</div>
+          <div class="plan-aulas-info">8 aulas de 60 minutos por m&ecirc;s</div>
         </div>
         <ul class="plan-features">
           <li>8 aulas de 60 min/m&ecirc;s</li>
@@ -905,7 +1457,7 @@
         <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Teacher%20Adilson!%20Tenho%20interesse%20no%20Plano%20Flu%C3%AAncia." class="plan-cta plan-cta-primary" target="_blank" rel="noopener">
           Quero Este Plano
         </a>
-        <span class="plan-per-minute">R$ 0,72/min &bull; 10% off no PIX: R$ 312/m&ecirc;s</span>
+        <span class="plan-per-minute">10% off no PIX &bull; R$ 312/m&ecirc;s</span>
       </div>
 
       <!-- IMERSÃO -->
@@ -916,7 +1468,8 @@
         <div class="plan-price-block">
           <div class="plan-old-price">De R$ 597</div>
           <div class="plan-price"><sup>R$</sup>477<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/m&ecirc;s</span></div>
-          <div class="plan-per-aula">R$ 39,75 por aula</div>
+          <div class="plan-per-minute-badge">&#128293; Apenas R$ 0,66/minuto</div>
+          <div class="plan-aulas-info">12 aulas de 60 minutos por m&ecirc;s</div>
         </div>
         <ul class="plan-features">
           <li>12 aulas de 60 min/m&ecirc;s</li>
@@ -927,13 +1480,161 @@
           <li>Sem fidelidade</li>
         </ul>
         <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Teacher%20Adilson!%20Tenho%20interesse%20no%20Plano%20Imers%C3%A3o." class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
-        <span class="plan-per-minute">R$ 0,66/min &bull; 10% off no PIX: R$ 429/m&ecirc;s</span>
+        <span class="plan-per-minute">10% off no PIX &bull; R$ 429/m&ecirc;s</span>
       </div>
     </div>
 
     <p class="pix-discount-note fade-in">
       &#128176; <strong>Desconto PIX:</strong> Todos os planos t&ecirc;m 10% de desconto no pagamento via PIX. Plano trimestral com at&eacute; 15% off.
     </p>
+  </div>
+</section>
+
+<!-- WHY PER MINUTE SECTION -->
+<section class="why-minute-section">
+  <div class="container-lp">
+    <h2 class="fade-in">Por Que Falar em <em>Custo por Minuto?</em></h2>
+    <p class="why-minute-subtitle fade-in">A maioria das escolas vende aulas de 30 a 45 minutos. Aqui cada aula tem 60 minutos completos — ent&atilde;o a comparac&atilde;o honesta &eacute; pelo tempo que voc&ecirc; realmente recebe.</p>
+
+    <div class="why-minute-grid">
+      <div class="why-card fade-in">
+        <div class="why-card-header">
+          <div class="why-plan-name">Starter</div>
+          <div class="why-plan-price">R$ 197/m&ecirc;s</div>
+        </div>
+        <div class="why-minutes-block">
+          <div class="why-minutes-num">240</div>
+          <div class="why-minutes-label">minutos de aula por m&ecirc;s</div>
+        </div>
+        <div class="why-cost-block">
+          <div class="why-cost-num">R$ 0,82</div>
+          <div class="why-cost-label">por minuto de professor particular</div>
+        </div>
+        <ul class="why-includes">
+          <li>Professor particular exclusivo</li>
+          <li>Aulas ao vivo de 60 min</li>
+          <li>Material did&aacute;tico incluso</li>
+          <li>WhatsApp direto com o professor</li>
+          <li>Plano de estudos personalizado</li>
+        </ul>
+      </div>
+
+      <div class="why-card why-featured fade-in">
+        <div class="why-card-header">
+          <div class="why-plan-name">Flu&ecirc;ncia</div>
+          <div class="why-plan-price">R$ 347/m&ecirc;s</div>
+        </div>
+        <div class="why-minutes-block">
+          <div class="why-minutes-num">480</div>
+          <div class="why-minutes-label">minutos de aula por m&ecirc;s</div>
+        </div>
+        <div class="why-cost-block">
+          <div class="why-cost-num">R$ 0,72</div>
+          <div class="why-cost-label">por minuto de professor particular</div>
+        </div>
+        <ul class="why-includes">
+          <li>Professor particular exclusivo</li>
+          <li>Aulas ao vivo de 60 min</li>
+          <li>Material did&aacute;tico incluso</li>
+          <li>WhatsApp ilimitado com o professor</li>
+          <li>Simulados de entrevista mensais</li>
+          <li>Plano de estudos personalizado</li>
+        </ul>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-header">
+          <div class="why-plan-name">Imers&atilde;o</div>
+          <div class="why-plan-price">R$ 477/m&ecirc;s</div>
+        </div>
+        <div class="why-minutes-block">
+          <div class="why-minutes-num">720</div>
+          <div class="why-minutes-label">minutos de aula por m&ecirc;s</div>
+        </div>
+        <div class="why-cost-block">
+          <div class="why-cost-num">R$ 0,66</div>
+          <div class="why-cost-label">por minuto de professor particular</div>
+        </div>
+        <ul class="why-includes">
+          <li>Professor particular exclusivo</li>
+          <li>Aulas ao vivo de 60 min</li>
+          <li>Material did&aacute;tico incluso</li>
+          <li>WhatsApp ilimitado com o professor</li>
+          <li>Prepara&ccedil;&atilde;o intensiva para entrevistas</li>
+          <li>Feedback por &aacute;udio semanal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR SECTION -->
+<section class="calc-section">
+  <div class="container-lp">
+    <h2 class="fade-in">Monte Seu <em>Plano Personalizado</em></h2>
+    <p class="calc-subtitle fade-in">Escolha a quantidade de aulas e descubra quanto custará investir no seu inglês.</p>
+
+    <div class="calc-wrapper fade-in">
+
+      <!-- Painel de inputs -->
+      <div class="calc-inputs">
+        <div class="calc-input-group">
+          <label>Quantas aulas por semana?</label>
+          <div class="calc-slider-wrap">
+            <input type="range" min="1" max="5" value="2" class="calc-slider" id="calcSlider">
+            <div class="calc-slider-ticks">
+              <span>1&times;</span>
+              <span>2&times;</span>
+              <span>3&times;</span>
+              <span>4&times;</span>
+              <span>5&times;</span>
+            </div>
+          </div>
+          <div class="calc-slider-val" id="calcSliderVal">2 aulas por semana</div>
+        </div>
+
+        <div class="calc-input-group">
+          <label>Dura&ccedil;&atilde;o de cada aula</label>
+          <div class="calc-duration-box">
+            <span class="calc-duration-icon">&#9201;</span>
+            <div>
+              <div class="calc-duration-val">60 minutos</div>
+              <div class="calc-duration-note">Todas as aulas s&atilde;o integrais &mdash; sem aulas curtas de 30&ndash;45 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel de resultados -->
+      <div class="calc-result">
+        <div class="calc-result-header">Seu Plano Personalizado</div>
+        <div class="calc-result-plan" id="calcPlanName">Flu&ecirc;ncia</div>
+
+        <div class="calc-stats-grid">
+          <div class="calc-stat-box">
+            <div class="calc-stat-num" id="calcAulasMes">8</div>
+            <div class="calc-stat-lbl">aulas por m&ecirc;s</div>
+          </div>
+          <div class="calc-stat-box">
+            <div class="calc-stat-num" id="calcMinutos">480</div>
+            <div class="calc-stat-lbl">minutos de ingl&ecirc;s ao vivo</div>
+          </div>
+        </div>
+
+        <div class="calc-price-block">
+          <div class="calc-price-lbl">Investimento estimado</div>
+          <div class="calc-price" id="calcPreco">R$ 347/m&ecirc;s</div>
+          <div class="calc-per-min" id="calcPerMin">Apenas R$ 0,72 por minuto</div>
+        </div>
+
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Teacher%20Adilson!%20Calculei%20um%20plano%20com%202%20aulas%20por%20semana%20e%20gostaria%20de%20saber%20mais." class="calc-cta-btn" id="calcCta" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Solicitar Proposta Personalizada
+        </a>
+        <p class="calc-custom-note" id="calcNote"></p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -953,24 +1654,28 @@
         </thead>
         <tbody>
           <tr>
-            <td>Pre&ccedil;o por aula</td>
-            <td class="highlight-col">R$ 39-49</td>
+            <td>Aula individual</td>
+            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td><strong>Custo por minuto</strong></td>
+            <td class="highlight-col"><strong>A partir de R$ 0,66</strong></td>
           </tr>
           <tr>
             <td>Dura&ccedil;&atilde;o da aula</td>
-            <td class="highlight-col">60 min</td>
-          </tr>
-          <tr>
-            <td>Custo por minuto</td>
-            <td class="highlight-col">R$ 0,66</td>
+            <td class="highlight-col">60 min completos</td>
           </tr>
           <tr>
             <td>Professor fixo</td>
             <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
           </tr>
           <tr>
-            <td>Experi&ecirc;ncia do prof.</td>
+            <td>Experi&ecirc;ncia do professor</td>
             <td class="highlight-col">+8 anos</td>
+          </tr>
+          <tr>
+            <td>Plano personalizado</td>
+            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
           </tr>
           <tr>
             <td>Foco em carreira</td>
@@ -982,6 +1687,10 @@
           </tr>
           <tr>
             <td>WhatsApp direto</td>
+            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Aula experimental gr&aacute;tis</td>
             <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
           </tr>
         </tbody>
@@ -1177,6 +1886,80 @@
         }
       });
     });
+
+    // Plan Calculator
+    (function() {
+      var slider = document.getElementById('calcSlider');
+      if (!slider) return;
+
+      var plans = {
+        1: {
+          name: 'Starter',
+          aulas: 4,
+          preco: 'R$ 197/mês',
+          perMin: 'Apenas R$ 0,82 por minuto',
+          note: '',
+          waText: '1%20aula%20por%20semana%20(Plano%20Starter)'
+        },
+        2: {
+          name: 'Fluência',
+          aulas: 8,
+          preco: 'R$ 347/mês',
+          perMin: 'Apenas R$ 0,72 por minuto',
+          note: '',
+          waText: '2%20aulas%20por%20semana%20(Plano%20Flu%C3%AAncia)'
+        },
+        3: {
+          name: 'Imersão',
+          aulas: 12,
+          preco: 'R$ 477/mês',
+          perMin: 'Apenas R$ 0,66 por minuto',
+          note: '',
+          waText: '3%20aulas%20por%20semana%20(Plano%20Imers%C3%A3o)'
+        }
+      };
+
+      function updateCalc() {
+        var val = parseInt(slider.value);
+        var plan, aulasMes, minutos;
+
+        if (val <= 3) {
+          plan = plans[val];
+          aulasMes = plan.aulas;
+          minutos = aulasMes * 60;
+        } else {
+          aulasMes = val * 4;
+          minutos = aulasMes * 60;
+          plan = {
+            name: 'Personalizado',
+            preco: 'Sob consulta',
+            perMin: 'Solicite uma proposta especial',
+            note: 'Para ' + val + ' aulas por semana, o Teacher Adilson monta um plano exclusivo para você.',
+            waText: val + '%20aulas%20por%20semana%20(Plano%20Personalizado)'
+          };
+        }
+
+        var sliderLabel = val === 1 ? '1 aula por semana' : val + ' aulas por semana';
+        document.getElementById('calcSliderVal').textContent = sliderLabel;
+        document.getElementById('calcPlanName').textContent = plan.name;
+        document.getElementById('calcAulasMes').textContent = aulasMes;
+        document.getElementById('calcMinutos').textContent = minutos;
+        document.getElementById('calcPreco').textContent = plan.preco;
+        document.getElementById('calcPerMin').textContent = plan.perMin;
+        document.getElementById('calcNote').textContent = plan.note || '';
+
+        var waMsg = 'Ol%C3%A1%20Teacher%20Adilson!%20Calculei%20um%20plano%20com%20'
+          + plan.waText + '%20e%20gostaria%20de%20saber%20mais.';
+        document.getElementById('calcCta').href = 'https://wa.me/5511999999999?text=' + waMsg;
+
+        var pct = ((val - 1) / 4) * 100;
+        slider.style.background = 'linear-gradient(to right, #C4704B ' + pct + '%, #F0E8DE ' + pct + '%)';
+      }
+
+      slider.addEventListener('input', updateCalc);
+      updateCalc();
+    })();
+
   });
 </script>
 
