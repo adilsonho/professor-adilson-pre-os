@@ -793,6 +793,23 @@
     }
     .plan-card.featured .plan-aulas-info { color: rgba(245,240,235,0.45); }
 
+    /* ============ HIGHLIGHT PLAN (scroll navigation) ============ */
+    .plan-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+    @keyframes highlightPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(196,112,75,0.5), var(--shadow-lg); }
+      40%  { box-shadow: 0 0 0 8px rgba(196,112,75,0.25), 0 0 40px rgba(196,112,75,0.4); }
+      100% { box-shadow: 0 0 0 2px rgba(196,112,75,0.4), 0 0 30px rgba(196,112,75,0.35); }
+    }
+    .highlight-plan {
+      transform: scale(1.03) !important;
+      border-color: var(--terracotta) !important;
+      box-shadow:
+        0 0 0 2px rgba(196,112,75,0.4),
+        0 0 30px rgba(196,112,75,0.35),
+        var(--shadow-lg) !important;
+      animation: highlightPulse 0.5s ease forwards;
+    }
+
     /* ============ VALUE PER MINUTE BLOCK ============ */
     .value-minute-section {
       padding: 80px 24px;
@@ -827,10 +844,25 @@
       min-width: 190px;
       transition: all 0.3s ease;
     }
+    .value-minute-card.vm-clickable { cursor: pointer; }
     .value-minute-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(196,112,75,0.4);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      transform: translateY(-6px);
+      border-color: rgba(196,112,75,0.55);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 18px rgba(196,112,75,0.18);
+    }
+    .vm-cta-hint {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: rgba(245,240,235,0.45);
+      transition: color 0.3s;
+    }
+    .value-minute-card:hover .vm-cta-hint { color: var(--terracotta-light); }
+    .value-minute-card.vm-highlight .vm-cta-hint { color: rgba(255,255,255,0.55); }
+    .value-minute-card.vm-highlight:hover .vm-cta-hint { color: rgba(255,255,255,0.9); }
+    .value-minute-card:focus-visible {
+      outline: 2px solid var(--terracotta-light);
+      outline-offset: 4px;
     }
     .value-minute-card.vm-highlight {
       background: linear-gradient(135deg, var(--terracotta-dark) 0%, var(--terracotta) 100%);
@@ -998,6 +1030,68 @@
       font-weight: 700;
       flex-shrink: 0;
     }
+
+    /* ============ PRICING VALUE BANNER ============ */
+    .pvb-wrap { text-align: center; margin-bottom: 40px; }
+    .pricing-value-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(196,112,75,0.1), rgba(196,112,75,0.04));
+      border: 1px solid rgba(196,112,75,0.28);
+      border-radius: 50px;
+      padding: 11px 26px;
+      font-size: 0.97rem;
+      color: var(--navy);
+    }
+    .pricing-value-banner .pvb-icon { color: var(--gold); }
+    .pricing-value-banner strong { color: var(--terracotta); font-weight: 700; }
+
+    /* ============ MINUTE OPTIONS (CALCULATOR) ============ */
+    .min-options {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .min-opt {
+      flex: 1;
+      min-width: 72px;
+      padding: 10px 6px;
+      border: 2px solid var(--cream-dark);
+      background: white;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .min-opt:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      background: rgba(196,112,75,0.05);
+    }
+    .min-opt.active {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: white;
+      box-shadow: 0 2px 10px rgba(196,112,75,0.35);
+    }
+    .min-rate-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--cream-dark);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .min-rate-note strong { color: var(--terracotta); }
 
     /* ============ CALCULATOR SECTION ============ */
     .calc-section {
@@ -1377,23 +1471,26 @@
     <p class="value-minute-subtitle fade-in">Com os planos do Teacher Adilson, voc&ecirc; investe entre R$ 0,66 e R$ 0,82 por minuto para aprender uma habilidade que pode aumentar suas oportunidades profissionais, sal&aacute;rios e acesso ao mercado internacional.</p>
 
     <div class="value-minute-grid">
-      <div class="value-minute-card fade-in">
+      <div class="value-minute-card fade-in vm-clickable" data-target="plano-starter" tabindex="0" role="button" aria-label="Ver Plano Starter">
         <div class="vm-plan-name">Starter</div>
         <div class="vm-price">R$ 0,82</div>
         <div class="vm-label">por minuto</div>
         <div class="vm-plan-ref">R$ 197/m&ecirc;s &bull; 4 aulas</div>
+        <div class="vm-cta-hint">Ver plano ↓</div>
       </div>
-      <div class="value-minute-card vm-highlight fade-in">
+      <div class="value-minute-card vm-highlight fade-in vm-clickable" data-target="plano-fluencia" tabindex="0" role="button" aria-label="Ver Plano Fluência">
         <div class="vm-plan-name">Flu&ecirc;ncia &mdash; Mais Popular</div>
         <div class="vm-price">R$ 0,72</div>
         <div class="vm-label">por minuto</div>
         <div class="vm-plan-ref">R$ 347/m&ecirc;s &bull; 8 aulas</div>
+        <div class="vm-cta-hint">Ver plano ↓</div>
       </div>
-      <div class="value-minute-card fade-in">
+      <div class="value-minute-card fade-in vm-clickable" data-target="plano-imersao" tabindex="0" role="button" aria-label="Ver Plano Imersão">
         <div class="vm-plan-name">Imers&atilde;o</div>
         <div class="vm-price">R$ 0,66</div>
         <div class="vm-label">por minuto</div>
         <div class="vm-plan-ref">R$ 477/m&ecirc;s &bull; 12 aulas</div>
+        <div class="vm-cta-hint">Ver plano ↓</div>
       </div>
     </div>
 
@@ -1411,9 +1508,17 @@
       <p class="pricing-subtitle fade-in">Todos os planos incluem aulas de 60 minutos, material did&aacute;tico e acesso direto ao professor pelo WhatsApp. Sem fidelidade.</p>
     </div>
 
+    <div class="pvb-wrap fade-in">
+      <div class="pricing-value-banner">
+        <span class="pvb-icon">&#11088;</span>
+        Apenas <strong>R$&nbsp;0,66 por minuto</strong> de aula particular com professor dedicado.
+        <span class="pvb-icon">&#11088;</span>
+      </div>
+    </div>
+
     <div class="pricing-grid">
       <!-- STARTER -->
-      <div class="plan-card fade-in">
+      <div class="plan-card fade-in" id="plano-starter">
         <span class="plan-icon">&#127793;</span>
         <div class="plan-name">Starter</div>
         <div class="plan-freq">1 aula por semana</div>
@@ -1430,12 +1535,13 @@
           <li>Plano de estudos personalizado</li>
           <li>Sem fidelidade</li>
         </ul>
-        <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Tenho%20interesse%20no%20Plano%20Starter." class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
+        <!-- MERCADO PAGO: configurar URL de retorno → obrigado.html?plano=starter -->
+        <a href="https://mpago.la/2WbpND9" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
         <span class="plan-per-minute">10% off no PIX &bull; R$ 177/m&ecirc;s</span>
       </div>
 
       <!-- FLUÊNCIA (FEATURED) -->
-      <div class="plan-card featured fade-in">
+      <div class="plan-card featured fade-in" id="plano-fluencia">
         <div class="popular-badge">Mais Popular</div>
         <span class="plan-icon">&#128640;</span>
         <div class="plan-name">Flu&ecirc;ncia</div>
@@ -1454,14 +1560,15 @@
           <li>Plano de estudos personalizado</li>
           <li>Sem fidelidade</li>
         </ul>
-        <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Tenho%20interesse%20no%20Plano%20Flu%C3%AAncia." class="plan-cta plan-cta-primary" target="_blank" rel="noopener">
+        <!-- MERCADO PAGO: configurar URL de retorno → obrigado.html?plano=fluencia -->
+        <a href="https://mpago.la/2XjQ9Cx" class="plan-cta plan-cta-primary" target="_blank" rel="noopener">
           Quero Este Plano
         </a>
         <span class="plan-per-minute">10% off no PIX &bull; R$ 312/m&ecirc;s</span>
       </div>
 
       <!-- IMERSÃO -->
-      <div class="plan-card fade-in">
+      <div class="plan-card fade-in" id="plano-imersao">
         <span class="plan-icon">&#9889;</span>
         <div class="plan-name">Imers&atilde;o</div>
         <div class="plan-freq">3 aulas por semana</div>
@@ -1479,7 +1586,8 @@
           <li>Resultado em 3 meses ou menos</li>
           <li>Sem fidelidade</li>
         </ul>
-        <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Tenho%20interesse%20no%20Plano%20Imers%C3%A3o." class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
+        <!-- MERCADO PAGO: configurar URL de retorno → obrigado.html?plano=imersao -->
+        <a href="https://mpago.la/1UaEYBy" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
         <span class="plan-per-minute">10% off no PIX &bull; R$ 429/m&ecirc;s</span>
       </div>
     </div>
@@ -1571,65 +1679,61 @@
 <!-- CALCULATOR SECTION -->
 <section class="calc-section">
   <div class="container-lp">
-    <h2 class="fade-in">Monte Seu <em>Plano Personalizado</em></h2>
-    <p class="calc-subtitle fade-in">Escolha a quantidade de aulas e descubra quanto custará investir no seu inglês.</p>
+    <h2 class="fade-in">Monte seu <em>Plano Personalizado</em></h2>
+    <p class="calc-subtitle fade-in">Estude no seu ritmo. Monte um plano personalizado a partir de <strong style="color:var(--terracotta);">R$&nbsp;0,66 por minuto</strong>.</p>
+    <p class="calc-subtitle fade-in" style="margin-top:-30px;font-size:0.92rem;">Voc&ecirc; escolhe a quantidade de minutos e eu monto uma proposta sob medida para seus objetivos.</p>
 
     <div class="calc-wrapper fade-in">
 
       <!-- Painel de inputs -->
       <div class="calc-inputs">
         <div class="calc-input-group">
-          <label>Quantas aulas por semana?</label>
-          <div class="calc-slider-wrap">
-            <input type="range" min="1" max="5" value="2" class="calc-slider" id="calcSlider">
-            <div class="calc-slider-ticks">
-              <span>1&times;</span>
-              <span>2&times;</span>
-              <span>3&times;</span>
-              <span>4&times;</span>
-              <span>5&times;</span>
-            </div>
+          <label>Quantidade de minutos por m&ecirc;s</label>
+          <div class="min-options" id="minOptions">
+            <button class="min-opt" data-min="60">60 min</button>
+            <button class="min-opt" data-min="120">120 min</button>
+            <button class="min-opt active" data-min="240">240 min</button>
+            <button class="min-opt" data-min="480">480 min</button>
+            <button class="min-opt" data-min="720">720 min</button>
           </div>
-          <div class="calc-slider-val" id="calcSliderVal">2 aulas por semana</div>
+          <div class="calc-slider-val" id="calcSliderVal">240 minutos por m&ecirc;s selecionados</div>
         </div>
 
         <div class="calc-input-group">
-          <label>Dura&ccedil;&atilde;o de cada aula</label>
-          <div class="calc-duration-box">
-            <span class="calc-duration-icon">&#9201;</span>
-            <div>
-              <div class="calc-duration-val">60 minutos</div>
-              <div class="calc-duration-note">Todas as aulas s&atilde;o integrais &mdash; sem aulas curtas de 30&ndash;45 min</div>
-            </div>
+          <label>Taxa por minuto</label>
+          <div class="min-rate-note">
+            <span>&#128197;</span>
+            <span>Custo fixo de <strong>R$ 0,66</strong> por minuto — professor particular dedicado, aulas de 60 min ao vivo.</span>
           </div>
         </div>
       </div>
 
       <!-- Painel de resultados -->
       <div class="calc-result">
-        <div class="calc-result-header">Seu Plano Personalizado</div>
-        <div class="calc-result-plan" id="calcPlanName">Flu&ecirc;ncia</div>
+        <div class="calc-result-header">Total Estimado</div>
+        <div class="calc-result-plan" id="calcPlanName">Plano Personalizado</div>
 
         <div class="calc-stats-grid">
           <div class="calc-stat-box">
-            <div class="calc-stat-num" id="calcAulasMes">8</div>
-            <div class="calc-stat-lbl">aulas por m&ecirc;s</div>
+            <div class="calc-stat-num" id="calcMinutos">240</div>
+            <div class="calc-stat-lbl">minutos de ingl&ecirc;s ao vivo</div>
           </div>
           <div class="calc-stat-box">
-            <div class="calc-stat-num" id="calcMinutos">480</div>
-            <div class="calc-stat-lbl">minutos de ingl&ecirc;s ao vivo</div>
+            <div class="calc-stat-num" id="calcAulasMes">4</div>
+            <div class="calc-stat-lbl">aulas de 60 min</div>
           </div>
         </div>
 
         <div class="calc-price-block">
-          <div class="calc-price-lbl">Investimento estimado</div>
-          <div class="calc-price" id="calcPreco">R$ 347/m&ecirc;s</div>
-          <div class="calc-per-min" id="calcPerMin">Apenas R$ 0,72 por minuto</div>
+          <div class="calc-price-lbl">Total estimado</div>
+          <div class="calc-price" id="calcPreco">R$ 158,40</div>
+          <div class="calc-per-min" id="calcPerMin">Baseado em R$ 0,66/minuto</div>
         </div>
 
-        <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Calculei%20um%20plano%20com%202%20aulas%20por%20semana%20e%20gostaria%20de%20saber%20mais." class="calc-cta-btn" id="calcCta" target="_blank" rel="noopener">
+        <!-- ALTERAR AQUI O NÚMERO DO WHATSAPP se necessário -->
+        <a href="#" class="calc-cta-btn" id="calcCta" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Solicitar Proposta Personalizada
+          Solicitar Plano Personalizado
         </a>
         <p class="calc-custom-note" id="calcNote"></p>
       </div>
@@ -1880,76 +1984,63 @@
       });
     });
 
-    // Plan Calculator
+    // Value-card → Plan navigation
     (function() {
-      var slider = document.getElementById('calcSlider');
-      if (!slider) return;
-
-      var plans = {
-        1: {
-          name: 'Starter',
-          aulas: 4,
-          preco: 'R$ 197/mês',
-          perMin: 'Apenas R$ 0,82 por minuto',
-          note: '',
-          waText: '1%20aula%20por%20semana%20(Plano%20Starter)'
-        },
-        2: {
-          name: 'Fluência',
-          aulas: 8,
-          preco: 'R$ 347/mês',
-          perMin: 'Apenas R$ 0,72 por minuto',
-          note: '',
-          waText: '2%20aulas%20por%20semana%20(Plano%20Flu%C3%AAncia)'
-        },
-        3: {
-          name: 'Imersão',
-          aulas: 12,
-          preco: 'R$ 477/mês',
-          perMin: 'Apenas R$ 0,66 por minuto',
-          note: '',
-          waText: '3%20aulas%20por%20semana%20(Plano%20Imers%C3%A3o)'
-        }
-      };
-
-      function updateCalc() {
-        var val = parseInt(slider.value);
-        var plan, aulasMes, minutos;
-
-        if (val <= 3) {
-          plan = plans[val];
-          aulasMes = plan.aulas;
-          minutos = aulasMes * 60;
-        } else {
-          aulasMes = val * 4;
-          minutos = aulasMes * 60;
-          plan = {
-            name: 'Personalizado',
-            preco: 'Sob consulta',
-            perMin: 'Solicite uma proposta especial',
-            note: 'Para ' + val + ' aulas por semana, o Teacher Adilson monta um plano exclusivo para você.',
-            waText: val + '%20aulas%20por%20semana%20(Plano%20Personalizado)'
-          };
-        }
-
-        var sliderLabel = val === 1 ? '1 aula por semana' : val + ' aulas por semana';
-        document.getElementById('calcSliderVal').textContent = sliderLabel;
-        document.getElementById('calcPlanName').textContent = plan.name;
-        document.getElementById('calcAulasMes').textContent = aulasMes;
-        document.getElementById('calcMinutos').textContent = minutos;
-        document.getElementById('calcPreco').textContent = plan.preco;
-        document.getElementById('calcPerMin').textContent = plan.perMin;
-        document.getElementById('calcNote').textContent = plan.note || '';
-
-        var waMsg = 'Ol%C3%A1%20Teacher%20Adilson!%20Calculei%20um%20plano%20com%20'
-          + plan.waText + '%20e%20gostaria%20de%20saber%20mais.';
-        document.getElementById('calcCta').href = 'https://wa.me/5511919591579?text=' + waMsg;
-
-        var pct = ((val - 1) / 4) * 100;
-        slider.style.background = 'linear-gradient(to right, #C4704B ' + pct + '%, #F0E8DE ' + pct + '%)';
+      function navigateToPlan(targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) return;
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function() {
+          target.classList.add('highlight-plan');
+          setTimeout(function() {
+            target.classList.remove('highlight-plan');
+          }, 2000);
+        }, 600);
       }
 
-      slider.addEventListener('input', updateCalc);
+      document.querySelectorAll('.vm-clickable').forEach(function(card) {
+        card.addEventListener('click', function() {
+          navigateToPlan(card.getAttribute('data-target'));
+        });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navigateToPlan(card.getAttribute('data-target'));
+          }
+        });
+      });
+    })();
+
+    // Minute Calculator
+    (function() {
+      var RATE = 0.66;
+      var selectedMin = 240;
+
+      function formatBRL(value) {
+        return 'R$ ' + value.toFixed(2).replace('.', ',');
+      }
+
+      function updateCalc() {
+        var total = selectedMin * RATE;
+        var aulas = Math.round(selectedMin / 60);
+        document.getElementById('calcMinutos').textContent = selectedMin;
+        document.getElementById('calcAulasMes').textContent = aulas;
+        document.getElementById('calcPreco').textContent = formatBRL(total);
+        document.getElementById('calcSliderVal').textContent = selectedMin + ' minutos por mês selecionados';
+        var msg = 'Olá Teacher Adilson!\n\nGostaria de solicitar um plano personalizado.\n\nQuantidade de minutos desejada: ' + selectedMin + ' min/mês\nValor estimado: ' + formatBRL(total);
+        document.getElementById('calcCta').href = 'https://wa.me/5511919591579?text=' + encodeURIComponent(msg);
+      }
+
+      var buttons = document.querySelectorAll('#minOptions .min-opt');
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          buttons.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          selectedMin = parseInt(btn.getAttribute('data-min'));
+          updateCalc();
+        });
+      });
+
       updateCalc();
     })();
 
