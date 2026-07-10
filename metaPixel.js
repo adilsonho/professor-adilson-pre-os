@@ -31,7 +31,10 @@
   var PIXEL_ID = '871942722527879';
 
   // ALTERAR AQUI ANTES DO DEPLOY — URL pública do backend.
-  var API_BASE_URL = 'professor-adilson-pre-os-production.up.railway.app';
+  var API_BASE_URL = 'https://professor-adilson-pre-os-production.up.railway.app';
+  if (!/^https?:\/\//.test(API_BASE_URL)) {
+    console.error('[Meta Pixel] API_BASE_URL sem protocolo (http/https) — todo fetch vai resolver como URL relativa e falhar: "' + API_BASE_URL + '"');
+  }
 
   // Populado via GET /plans (config/plans.js é a fonte única de
   // verdade — nada aqui hardcoda preço). PLANS fica vazio até a
