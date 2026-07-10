@@ -1,0 +1,36 @@
+# Ambiente de desenvolvimento local. Em produção (Railway/Render) o
+# Postgres é gerenciado pela plataforma — este compose não é usado lá.
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: teacher_adilson
+      POSTGRES_PASSWORD: teacher_adilson
+      POSTGRES_DB: teacher_adilson
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U teacher_adilson']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://teacher_adilson:teacher_adilson@postgres:5432/teacher_adilson?schema=public
+    ports:
+      - '3000:3000'
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

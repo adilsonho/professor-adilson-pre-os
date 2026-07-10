@@ -1,0 +1,160 @@
+// Schema do backend do Teacher Adilson.
+// 3 tabelas por desenho (ver docs/architecture.md e docs/data-model.md):
+// Student, Payment, AnalyticsEvents. Sem CheckoutSessions (o Payment
+// já nasce em POST /checkout com status "pending"), sem Logs
+// (Pino/console/Railway — ver src/utils/logger.js), sem Leads
+// separado (é só um Student.status).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Precisa ficar em sincronia manual com as chaves de src/config/plans.js
+// — Prisma não permite importar um objeto JS pra dentro do schema.
+enum PlanId {
+  starter
+  fluencia
+  imersao
+}
+
+// Estágio do relacionamento com o aluno. "lead" e "inactive" existem
+// no enum mas nenhum fluxo automático escreve neles ainda (uso
+// futuro/manual) — só checkout_started, paid, cancelled e refunded
+// são escritos pelo sistema hoje.
+enum StudentStatus {
+  lead
+  checkout_started
+  paid
+  cancelled
+  inactive
+  refunded
+}
+
+enum PaymentStatus {
+  pending
+  approved
+  rejected
+  cancelled
+  refunded
+}
+
+// Nomes alinhados ao Meta standard event taxonomy. PageView,
+// ViewContent, ViewPricing e SelectPlan ficam reservados: nada no
+// backend os grava ainda, porque não existe endpoint de ingestão pra
+// eles (decisão de arquitetura — ver docs/architecture.md). Só
+// InitiateCheckout, Purchase e Lead são gravados hoje.
+enum AnalyticsEventName {
+  PageView
+  ViewContent
+  ViewPricing
+  SelectPlan
+  InitiateCheckout
+  Purchase
+  Lead
+}
+
+model Student {
+  id     String        @id @default(uuid())
+  name   String
+  email  String        @unique
+  phone  String
+  status StudentStatus @default(checkout_started)
+
+  origin      String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  utmTerm     String?
+  utmContent  String?
+  fbclid      String?
+  gclid       String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  payments        Payment[]
+  analyticsEvents AnalyticsEvent[]
+
+  @@index([status])
+}
+
+// O plano pertence ao pagamento, não ao aluno — histórico completo
+// preservado mesmo se o aluno mudar de plano entre um mês e outro.
+model Payment {
+  id String @id @default(uuid())
+
+  studentId String
+  student   Student @relation(fields: [studentId], references: [id])
+
+  plan   PlanId
+  value  Decimal       @db.Decimal(10, 2)
+  status PaymentStatus @default(pending)
+
+  // Qual gateway processou — hoje só 'mercado_pago', mas evita
+  // migration se um segundo provedor entrar no futuro.
+  provider      String  @default("mercado_pago")
+  paymentMethod String?
+
+  externalReference String  @unique
+  preferenceId      String?
+  mpPaymentId       String? @unique
+
+  // Mesmo event_id usado no Pixel (browser) e no envio server-side
+  // via Meta Conversion API — é a chave da deduplicação. Gerado no
+  // POST /checkout (Módulo 2), nunca no banco.
+  fbEventId String @unique
+
+  // Capturados no POST /checkout (quando o browser "existe") e
+  // reaproveitados pelo webhook (que chega depois, sem contexto de
+  // browser) pra montar o user_data do CAPI.
+  fbp       String?
+  fbc       String?
+  ip        String?
+  userAgent String?
+
+  approvedAt DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  analyticsEvents AnalyticsEvent[]
+
+  @@index([studentId])
+  @@index([status])
+}
+
+// Funil próprio — relatórios sem depender do Meta Ads Manager.
+model AnalyticsEvent {
+  id String @id @default(uuid())
+
+  eventId   String?
+  eventName AnalyticsEventName
+
+  studentId String?
+  student   Student? @relation(fields: [studentId], references: [id])
+
+  paymentId String?
+  payment   Payment? @relation(fields: [paymentId], references: [id])
+
+  plan     PlanId?
+  value    Decimal? @db.Decimal(10, 2)
+  currency String   @default("BRL")
+
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  fbclid      String?
+  fbp         String?
+  fbc         String?
+  ip          String?
+  userAgent   String?
+
+  createdAt DateTime @default(now())
+
+  @@index([eventName])
+  @@index([studentId])
+}
