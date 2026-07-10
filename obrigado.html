@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '871942722527879');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <script src="metaPixel.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>Pagamento Confirmado | Teacher Adilson</title>
@@ -437,8 +455,8 @@
             <polyline class="check-path" points="20 6 9 17 4 12"/>
           </svg>
         </div>
-        <h1 id="heroTitle">Pagamento Recebido com <em>Sucesso!</em> &#127881;</h1>
-        <p id="heroDesc">Obrigado por escolher estudar ingl&ecirc;s com o Teacher Adilson. Seu pagamento foi processado com sucesso e agora falta apenas um passo para iniciarmos sua jornada.</p>
+        <h1 id="heroTitle">Confirmando seu Pagamento&hellip; &#128269;</h1>
+        <p id="heroDesc">Aguarde um instante enquanto confirmamos o status do seu pagamento junto ao Mercado Pago.</p>
       </div>
 
       <!-- Confirmation Card -->
@@ -543,16 +561,19 @@
     // ==============================================
     var planosConfig = {
       starter: {
+        nome: 'Starter',
         titulo: 'Parabéns pela escolha do Plano <em>Starter!</em> &#127881;',
         texto: 'Você escolheu um plano ideal para construir uma base sólida no inglês com consistência e acompanhamento personalizado.',
         waMsg: 'Olá Teacher Adilson!\nAcabei de realizar o pagamento do Plano Starter e gostaria de iniciar minhas aulas.'
       },
       fluencia: {
+        nome: 'Fluência',
         titulo: 'Parabéns pela escolha do Plano <em>Fluência!</em> &#128640;',
         texto: 'Excelente escolha! O Plano Fluência é o mais escolhido pelos alunos que desejam acelerar seus resultados e desenvolver confiança para falar inglês.',
         waMsg: 'Olá Teacher Adilson!\nAcabei de realizar o pagamento do Plano Fluência e gostaria de iniciar minhas aulas.'
       },
       imersao: {
+        nome: 'Imersão',
         titulo: 'Parabéns pela escolha do Plano <em>Imersão!</em> &#9889;',
         texto: 'Você escolheu a experiência mais completa. Agora vamos acelerar sua evolução com um acompanhamento mais intenso e foco total nos seus objetivos.',
         waMsg: 'Olá Teacher Adilson!\nAcabei de realizar o pagamento do Plano Imersão e gostaria de iniciar minhas aulas.'
@@ -560,19 +581,103 @@
     };
 
     // ==============================================
-    // PERSONALIZAÇÃO DINÂMICA POR PLANO
+    // STATUS REAL VIA GET /payment/:ref — NUNCA via query param da URL
     // ==============================================
+    // O Mercado Pago redireciona pra cá com só um `?ref=` (o
+    // externalReference). Esse ref é consultado no nosso backend, que
+    // é quem de fato sabe o status (confirmado com o Mercado Pago via
+    // GET /v1/payments/{id} no webhook — ver Módulo 3). Nunca confiamos
+    // em ?status= ou ?collection_status=: qualquer um pode editar a
+    // URL na barra do navegador e forjar um "approved" ali. Purchase só
+    // dispara depois que o backend confirma, usando o mesmo fbEventId
+    // que o webhook já usou pro envio server-side (dedup). Lead nunca é
+    // disparado por aqui — é só server-side (Módulo 3).
+    function showState(state, config) {
+      config = config || {};
+      var nome = config.nome || 'escolhido';
+
+      if (state === 'approved') {
+        document.getElementById('heroTitle').innerHTML = config.titulo || 'Pagamento Recebido com <em>Sucesso!</em> &#127881;';
+        document.getElementById('heroDesc').textContent = config.texto || 'Obrigado por escolher estudar inglês com o Teacher Adilson.';
+        document.getElementById('waBtnLink').href =
+          'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(config.waMsg || 'Olá Teacher Adilson! Acabei de realizar o pagamento e gostaria de iniciar minhas aulas.');
+        return;
+      }
+
+      if (state === 'pending') {
+        document.getElementById('heroTitle').innerHTML = 'Pagamento em Análise &#8987;';
+        document.getElementById('heroDesc').textContent =
+          'Recebemos seu pagamento do Plano ' + nome + ' e ele está em processamento. Assim que for aprovado eu confirmo com você pelo WhatsApp — pode me chamar já para adiantarmos os próximos passos.';
+        document.getElementById('waBtnLink').href =
+          'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent('Olá Teacher Adilson!\nFiz o pagamento do Plano ' + nome + ' e está em análise.');
+        return;
+      }
+
+      if (state === 'rejected') {
+        document.getElementById('heroTitle').innerHTML = 'Pagamento Não Aprovado &#128533;';
+        document.getElementById('heroDesc').textContent =
+          'Não conseguimos confirmar o pagamento do Plano ' + nome + '. Isso pode acontecer por vários motivos — me chame no WhatsApp que resolvemos juntos, sem problema nenhum.';
+        document.getElementById('waBtnLink').href =
+          'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent('Olá Teacher Adilson!\nMeu pagamento do Plano ' + nome + ' não foi aprovado, preciso de ajuda.');
+        return;
+      }
+
+      // Fallback seguro — ref ausente, não encontrado, erro de rede,
+      // ou qualquer status que não seja um "sucesso" claro. Nunca
+      // presume aprovação.
+      document.getElementById('heroTitle').innerHTML = 'Confirmando seu Pagamento&hellip; &#128269;';
+      document.getElementById('heroDesc').textContent =
+        'Recebemos seu retorno do checkout, mas não conseguimos confirmar automaticamente o status do pagamento. Me chame no WhatsApp para eu confirmar manualmente e liberar suas aulas.';
+      document.getElementById('waBtnLink').href =
+        'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent('Olá Teacher Adilson!\nAcabei de finalizar um checkout e preciso confirmar o status do meu pagamento.');
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       var params = new URLSearchParams(window.location.search);
-      var plano = params.get('plano');
-      var config = planosConfig[plano];
+      var ref = params.get('ref');
 
-      if (config) {
-        document.getElementById('heroTitle').innerHTML = config.titulo;
-        document.getElementById('heroDesc').textContent = config.texto;
-        document.getElementById('waBtnLink').href =
-          'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(config.waMsg);
+      if (!ref) {
+        showState('unknown');
+        return;
       }
+
+      var apiBaseUrl = (window.MetaPixelEvents && window.MetaPixelEvents.API_BASE_URL) || 'http://localhost:3000';
+
+      fetch(apiBaseUrl + '/payment/' + encodeURIComponent(ref))
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          var config = planosConfig[data.plan] || {};
+
+          if (data.status === 'approved') {
+            showState('approved', config);
+            if (window.MetaPixelEvents) {
+              window.MetaPixelEvents.plansLoaded.then(function () {
+                window.MetaPixelEvents.trackPurchase(data.plan, { status: data.status }, data.fbEventId);
+              });
+            }
+            return;
+          }
+
+          if (data.status === 'pending') {
+            showState('pending', config);
+            return;
+          }
+
+          if (data.status === 'rejected' || data.status === 'cancelled') {
+            showState('rejected', config);
+            return;
+          }
+
+          // refunded ou qualquer status inesperado — não é um estado
+          // de "sucesso" pra mostrar, usa o fallback seguro.
+          showState('unknown', config);
+        })
+        .catch(function () {
+          showState('unknown');
+        });
     });
   </script>
 </body>

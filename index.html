@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '871942722527879');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <script src="metaPixel.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>Teacher Adilson | Planos de Aulas de Inglês</title>
-  <meta name="description" content="Aulas particulares de inglês online com professor experiente. Planos flexíveis, sem fidelidade. Professor particular a partir de R$ 0,66 por minuto.">
+  <title>Teacher Adilson | Inglês Particular a partir de R$197/mês</title>
+  <meta name="description" content="Aulas particulares de inglês online com professor experiente. Planos a partir de R$197 por mês, sem fidelidade. Foco em carreira, entrevistas internacionais e tecnologia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -105,12 +123,12 @@
     /* ============ HERO SECTION ============ */
     .hero-plans {
       position: relative;
-      min-height: 520px;
+      min-height: 560px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 24px 80px;
+      padding: 120px 24px 72px;
       background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
       overflow: hidden;
     }
@@ -130,7 +148,7 @@
     .hero-plans-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
+      max-width: 780px;
     }
     .hero-badge {
       display: inline-block;
@@ -147,29 +165,75 @@
       animation: fadeInDown 0.6s ease;
     }
     .hero-plans h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2rem, 5vw, 3.1rem);
       color: var(--cream);
       line-height: 1.2;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       animation: fadeInDown 0.8s ease;
     }
     .hero-plans h1 em {
-      color: var(--terracotta-light);
+      color: var(--gold);
       font-style: normal;
     }
     .hero-plans p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: rgba(245,240,235,0.75);
-      line-height: 1.7;
+      line-height: 1.6;
       max-width: 600px;
-      margin: 0 auto 32px;
+      margin: 0 auto 8px;
       animation: fadeInDown 1s ease;
     }
+    .hero-subtitle-trust {
+      font-size: 0.95rem !important;
+      color: rgba(245,240,235,0.55) !important;
+      margin-bottom: 32px !important;
+    }
+    .hero-cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      animation: fadeInUp 1.1s ease;
+    }
+    .hero-btn-primary, .hero-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      border-radius: 10px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .hero-btn-primary {
+      background: var(--terracotta);
+      color: white;
+      box-shadow: 0 4px 20px rgba(196,112,75,0.35);
+    }
+    .hero-btn-primary:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(196,112,75,0.45);
+    }
+    .hero-btn-secondary {
+      background: rgba(37,211,102,0.12);
+      color: var(--green);
+      border: 1.5px solid rgba(37,211,102,0.5);
+    }
+    .hero-btn-secondary:hover {
+      background: rgba(37,211,102,0.2);
+      transform: translateY(-2px);
+    }
+    .hero-btn-secondary svg { width: 18px; height: 18px; fill: var(--green); }
     .hero-stats-row {
       display: flex;
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
+      margin-bottom: 28px;
       animation: fadeInUp 1.2s ease;
     }
     .hero-stat { text-align: center; }
@@ -185,35 +249,41 @@
       letter-spacing: 1px;
       margin-top: 4px;
     }
-
-    /* ============ ANCHOR BAR ============ */
-    .anchor-bar {
-      background: var(--navy);
-      padding: 16px 0;
-      text-align: center;
-      border-bottom: 2px solid var(--terracotta);
+    .hero-badges-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      animation: fadeInUp 1.4s ease;
     }
-    .anchor-bar p { color: var(--cream); font-size: 1.05rem; }
-    .anchor-bar span { color: var(--gold); font-weight: 700; font-size: 1.2rem; }
-    .anchor-bar s { color: rgba(245,240,235,0.4); font-size: 0.95rem; }
+    .hero-badge-item {
+      background: rgba(212,168,83,0.15);
+      border: 1px solid rgba(212,168,83,0.35);
+      color: var(--gold-light);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
 
-    /* ============ FREE CLASS SECTION ============ */
+    /* ============ HOW IT WORKS SECTION ============ */
     .free-class-section {
-      padding: 80px 24px;
+      padding: 76px 24px;
       background: var(--cream);
       text-align: center;
     }
     .free-class-section h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
       color: var(--navy);
       margin-bottom: 12px;
     }
     .free-class-section h2 em { color: var(--terracotta); font-style: normal; }
     .free-class-subtitle {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 48px;
+      max-width: 560px;
+      margin: 0 auto 44px;
       line-height: 1.6;
     }
     .free-class-steps {
@@ -221,7 +291,7 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 32px;
       max-width: 900px;
-      margin: 0 auto 48px;
+      margin: 0 auto 44px;
     }
     .step-card {
       background: white;
@@ -274,14 +344,54 @@
     }
     .free-class-cta svg { width: 22px; height: 22px; fill: white; }
 
+    /* ============ BENEFITS SECTION ============ */
+    .benefits-section {
+      padding: 76px 24px;
+      background: var(--navy);
+      text-align: center;
+    }
+    .benefits-section h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .benefits-section h2 em { color: var(--gold); font-style: normal; }
+    .benefits-subtitle {
+      font-size: 1.02rem;
+      color: rgba(245,240,235,0.6);
+      max-width: 560px;
+      margin: 0 auto 44px;
+      line-height: 1.6;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .benefit-item {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 22px 14px;
+      transition: all 0.3s ease;
+    }
+    .benefit-item:hover {
+      border-color: rgba(196,112,75,0.5);
+      transform: translateY(-3px);
+    }
+    .benefit-icon { font-size: 1.7rem; display: block; margin-bottom: 10px; }
+    .benefit-label { font-size: 0.85rem; color: var(--text-light); font-weight: 500; line-height: 1.3; }
+
     /* ============ PRICING SECTION ============ */
     .pricing-section {
-      padding: 80px 24px 100px;
+      padding: 76px 24px 96px;
       background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
     }
-    .pricing-section .section-header { text-align: center; margin-bottom: 56px; }
+    .pricing-section .section-header { text-align: center; margin-bottom: 48px; }
     .pricing-section h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
       color: var(--navy);
       margin-bottom: 12px;
     }
@@ -322,10 +432,10 @@
     .plan-card.featured:hover { transform: scale(1.05) translateY(-6px); }
     .plan-card.featured .plan-name,
     .plan-card.featured .plan-freq,
+    .plan-card.featured .plan-desc,
     .plan-card.featured .plan-features li,
-    .plan-card.featured .plan-per-minute { color: var(--text-light); }
+    .plan-card.featured .plan-pix-note { color: var(--text-light); }
     .plan-card.featured .plan-features li::before { color: var(--gold); }
-    .plan-card.featured .plan-old-price { color: rgba(245,240,235,0.4); }
     .popular-badge {
       position: absolute;
       top: -14px;
@@ -341,51 +451,39 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .plan-icon { font-size: 2.6rem; margin-bottom: 12px; display: block; }
+    .plan-icon { font-size: 2.4rem; margin-bottom: 10px; display: block; }
     .plan-name {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: var(--navy);
-      margin-bottom: 4px;
-    }
-    .plan-freq { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; }
-    .plan-price-block {
-      margin-bottom: 24px;
-      padding: 20px 0;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-    .plan-card.featured .plan-price-block { border-color: rgba(255,255,255,0.1); }
-    .plan-old-price {
-      font-size: 1rem;
-      color: var(--text-muted);
-      text-decoration: line-through;
-      margin-bottom: 4px;
+      margin-bottom: 12px;
     }
     .plan-price {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.8rem;
+      font-size: 3rem;
       color: var(--terracotta);
       line-height: 1.1;
     }
+    .plan-card.featured .plan-price { color: var(--gold); }
     .plan-price sup { font-size: 1.2rem; vertical-align: super; }
-    .plan-price-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
-    .plan-card.featured .plan-price-label { color: rgba(245,240,235,0.5); }
-    .plan-per-aula {
-      display: inline-block;
-      background: rgba(196,112,75,0.1);
-      color: var(--terracotta);
-      padding: 4px 14px;
-      border-radius: 50px;
-      font-size: 0.8rem;
+    .plan-price-suffix { font-size: 1rem; font-family: 'DM Sans', sans-serif; color: var(--text-muted); }
+    .plan-card.featured .plan-price-suffix { color: rgba(245,240,235,0.55); }
+    .plan-freq {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-top: 6px;
       font-weight: 600;
-      margin-top: 8px;
     }
-    .plan-card.featured .plan-per-aula {
-      background: rgba(196,112,75,0.2);
-      color: var(--terracotta-light);
+    .plan-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-top: 10px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
-    .plan-features { list-style: none; text-align: left; margin-bottom: 28px; }
+    .plan-card.featured .plan-desc { border-color: rgba(255,255,255,0.1); }
+    .plan-features { list-style: none; text-align: left; margin: 22px 0 28px; }
     .plan-features li {
       padding: 8px 0;
       font-size: 0.92rem;
@@ -431,7 +529,7 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 24px rgba(37,211,102,0.4);
     }
-    .plan-per-minute {
+    .plan-pix-note {
       display: block;
       margin-top: 12px;
       font-size: 0.78rem;
@@ -440,95 +538,75 @@
     .pix-discount-note { text-align: center; margin-top: 32px; font-size: 0.9rem; color: var(--text-muted); }
     .pix-discount-note strong { color: var(--terracotta); }
 
-    /* ============ COMPARISON TABLE ============ */
-    .comparison-section { padding: 80px 24px; background: var(--navy); }
-    .comparison-section h2 {
-      text-align: center;
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
-      color: var(--cream);
-      margin-bottom: 12px;
+    /* ============ INCLUDED IN ALL PLANS ============ */
+    .included-section { padding: 76px 24px; background: var(--cream-dark); text-align: center; }
+    .included-section h2 {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      color: var(--navy);
+      margin-bottom: 40px;
     }
-    .comparison-section h2 em { color: var(--terracotta-light); font-style: normal; }
-    .comparison-subtitle {
-      text-align: center;
-      color: rgba(245,240,235,0.6);
-      font-size: 1rem;
-      margin-bottom: 48px;
-    }
-    .comparison-table-wrap {
+    .included-section h2 em { color: var(--terracotta); font-style: normal; }
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
       max-width: 900px;
       margin: 0 auto;
-      overflow-x: auto;
-      border-radius: 16px;
-      box-shadow: var(--shadow-lg);
     }
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--navy-light);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .comparison-table thead th {
-      background: var(--navy-mid);
-      color: var(--cream);
-      padding: 16px 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-align: center;
-      border-bottom: 2px solid rgba(255,255,255,0.05);
-    }
-    .comparison-table thead th:first-child { text-align: left; }
-    .comparison-table thead th.highlight-col { background: var(--terracotta-dark); color: white; }
-    .comparison-table tbody td {
-      padding: 14px 20px;
-      color: rgba(245,240,235,0.8);
+    .included-item {
+      background: white;
+      border-radius: 14px;
+      padding: 20px 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
       font-size: 0.9rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .comparison-table tbody td:first-child { text-align: left; font-weight: 500; color: var(--cream); }
-    .comparison-table tbody td.highlight-col {
-      background: rgba(196,112,75,0.08);
-      color: var(--gold-light);
       font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      line-height: 1.3;
+      text-align: left;
     }
-    .comparison-table tbody tr:last-child td { border-bottom: none; }
-    .check-yes { color: var(--green); font-size: 1.2rem; }
-    .check-no { color: var(--red); font-size: 1.2rem; }
+    .included-item::before {
+      content: '\2713';
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
 
     /* ============ GUARANTEE SECTION ============ */
-    .guarantee-section { padding: 80px 24px; background: var(--cream); }
+    .guarantee-section { padding: 76px 24px; background: var(--cream); }
     .guarantee-inner {
-      max-width: 800px;
+      max-width: 760px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       gap: 40px;
       background: white;
       border-radius: 20px;
-      padding: 48px;
+      padding: 44px;
       box-shadow: var(--shadow-md);
       border: 1px solid rgba(0,0,0,0.04);
     }
-    .guarantee-badge-img { width: 140px; height: 140px; flex-shrink: 0; }
+    .guarantee-badge-img { width: 120px; height: 120px; flex-shrink: 0; }
     .guarantee-badge-img img { width: 100%; height: 100%; object-fit: contain; }
-    .guarantee-text h2 { font-size: 1.6rem; color: var(--navy); margin-bottom: 12px; }
-    .guarantee-text p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+    .guarantee-text h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 10px; }
+    .guarantee-text p { font-size: 0.94rem; color: var(--text-muted); line-height: 1.6; }
     .guarantee-text strong { color: var(--terracotta); }
 
     /* ============ TESTIMONIALS ============ */
     .testimonials-plans {
-      padding: 80px 24px;
+      padding: 76px 24px;
       background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
     }
     .testimonials-plans h2 {
       text-align: center;
       font-size: clamp(1.5rem, 4vw, 2.2rem);
       color: var(--navy);
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
     .testimonials-plans h2 em { color: var(--terracotta); font-style: normal; }
     .testimonials-grid {
@@ -547,6 +625,17 @@
       transition: all 0.3s ease;
     }
     .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .testimonial-result {
+      display: inline-block;
+      background: rgba(196,112,75,0.1);
+      color: var(--terracotta-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
     .testimonial-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
     .testimonial-card blockquote {
       font-size: 0.95rem;
@@ -572,12 +661,12 @@
     .testimonial-role { font-size: 0.8rem; color: var(--text-muted); }
 
     /* ============ FAQ ============ */
-    .faq-section { padding: 80px 24px; background: var(--cream); }
+    .faq-section { padding: 76px 24px; background: var(--cream); }
     .faq-section h2 {
       text-align: center;
       font-size: clamp(1.5rem, 4vw, 2.2rem);
       color: var(--navy);
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
     .faq-list { max-width: 720px; margin: 0 auto; }
     .faq-item {
@@ -660,30 +749,34 @@
       font-size: 1.05rem;
       color: rgba(245,240,235,0.7);
       line-height: 1.7;
-      margin-bottom: 32px;
+      margin-bottom: 8px;
+    }
+    .final-cta-tagline {
+      font-size: 1.1rem !important;
+      color: var(--gold-light) !important;
+      font-weight: 600;
+      margin-bottom: 32px !important;
     }
     .final-cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: var(--green);
+      background: var(--terracotta);
       color: white;
       padding: 18px 44px;
       border-radius: 14px;
       font-size: 1.15rem;
       font-weight: 700;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.35);
+      box-shadow: 0 4px 24px rgba(196,112,75,0.35);
       border: none;
       cursor: pointer;
-      animation: pulse-green 2s infinite;
     }
     .final-cta-btn:hover {
-      background: var(--green-dark);
+      background: var(--terracotta-dark);
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
+      box-shadow: 0 8px 32px rgba(196,112,75,0.45);
     }
-    .final-cta-btn svg { width: 24px; height: 24px; fill: white; }
     .final-cta-note {
       margin-top: 16px;
       font-size: 0.85rem;
@@ -747,600 +840,113 @@
       transform: translateY(0);
     }
 
-    /* ============ HERO BADGES ROW ============ */
-    .hero-badges-row {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-      animation: fadeInUp 1.4s ease;
-    }
-    .hero-badge-item {
-      background: rgba(212,168,83,0.15);
-      border: 1px solid rgba(212,168,83,0.35);
-      color: var(--gold-light);
-      padding: 8px 18px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    /* ============ PLAN PER-MINUTE BADGE ============ */
-    .plan-per-minute-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
-      color: white;
-      padding: 9px 20px;
-      border-radius: 50px;
-      font-size: 0.97rem;
-      font-weight: 700;
-      margin-top: 12px;
-      margin-bottom: 6px;
-      box-shadow: 0 3px 12px rgba(196,112,75,0.35);
-      letter-spacing: 0.2px;
-    }
-    .plan-card.featured .plan-per-minute-badge {
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      color: var(--navy);
-      box-shadow: 0 3px 14px rgba(212,168,83,0.45);
-    }
-    .plan-aulas-info {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 5px;
-    }
-    .plan-card.featured .plan-aulas-info { color: rgba(245,240,235,0.45); }
-
     /* ============ HIGHLIGHT PLAN (scroll navigation) ============ */
     .plan-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-    @keyframes highlightPulse {
-      0%   { box-shadow: 0 0 0 0 rgba(196,112,75,0.5), var(--shadow-lg); }
-      40%  { box-shadow: 0 0 0 8px rgba(196,112,75,0.25), 0 0 40px rgba(196,112,75,0.4); }
-      100% { box-shadow: 0 0 0 2px rgba(196,112,75,0.4), 0 0 30px rgba(196,112,75,0.35); }
-    }
-    .highlight-plan {
-      transform: scale(1.03) !important;
-      border-color: var(--terracotta) !important;
-      box-shadow:
-        0 0 0 2px rgba(196,112,75,0.4),
-        0 0 30px rgba(196,112,75,0.35),
-        var(--shadow-lg) !important;
-      animation: highlightPulse 0.5s ease forwards;
-    }
 
-    /* ============ VALUE PER MINUTE BLOCK ============ */
-    .value-minute-section {
-      padding: 80px 24px;
-      background: var(--navy);
-      text-align: center;
-    }
-    .value-minute-section h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--cream);
-      margin-bottom: 12px;
-    }
-    .value-minute-section h2 em { color: var(--gold); font-style: normal; }
-    .value-minute-subtitle {
-      font-size: 1.05rem;
-      color: rgba(245,240,235,0.65);
-      max-width: 620px;
-      margin: 0 auto 48px;
-      line-height: 1.6;
-    }
-    .value-minute-grid {
-      display: flex;
+    /* ============ CHECKOUT MODAL ============ */
+    .checkout-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 27, 45, 0.75);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
       justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
+      z-index: 2000;
+      padding: 20px;
     }
-    .value-minute-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 32px 40px;
-      min-width: 190px;
-      transition: all 0.3s ease;
-    }
-    .value-minute-card.vm-clickable { cursor: pointer; }
-    .value-minute-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(196,112,75,0.55);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 18px rgba(196,112,75,0.18);
-    }
-    .vm-cta-hint {
-      margin-top: 10px;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      color: rgba(245,240,235,0.45);
-      transition: color 0.3s;
-    }
-    .value-minute-card:hover .vm-cta-hint { color: var(--terracotta-light); }
-    .value-minute-card.vm-highlight .vm-cta-hint { color: rgba(255,255,255,0.55); }
-    .value-minute-card.vm-highlight:hover .vm-cta-hint { color: rgba(255,255,255,0.9); }
-    .value-minute-card:focus-visible {
-      outline: 2px solid var(--terracotta-light);
-      outline-offset: 4px;
-    }
-    .value-minute-card.vm-highlight {
-      background: linear-gradient(135deg, var(--terracotta-dark) 0%, var(--terracotta) 100%);
-      border-color: transparent;
-      box-shadow: 0 8px 32px rgba(196,112,75,0.4);
-    }
-    .vm-plan-name {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: rgba(245,240,235,0.45);
-      margin-bottom: 12px;
-    }
-    .value-minute-card.vm-highlight .vm-plan-name { color: rgba(255,255,255,0.7); }
-    .vm-price {
-      font-family: 'DM Serif Display', serif;
-      font-size: 3rem;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 2px;
-    }
-    .value-minute-card.vm-highlight .vm-price { color: white; }
-    .vm-label {
-      font-size: 0.85rem;
-      color: rgba(245,240,235,0.55);
-      margin-bottom: 8px;
-    }
-    .value-minute-card.vm-highlight .vm-label { color: rgba(255,255,255,0.8); }
-    .vm-plan-ref {
-      display: inline-block;
-      font-size: 0.75rem;
-      color: rgba(245,240,235,0.35);
-      background: rgba(255,255,255,0.06);
-      padding: 3px 10px;
-      border-radius: 50px;
-    }
-    .value-minute-card.vm-highlight .vm-plan-ref {
-      color: rgba(255,255,255,0.65);
-      background: rgba(255,255,255,0.18);
-    }
-    .value-minute-tagline {
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 20px 28px;
-      font-size: 1rem;
-      color: rgba(245,240,235,0.72);
-      line-height: 1.7;
-    }
-
-    /* ============ WHY PER MINUTE SECTION ============ */
-    .why-minute-section {
-      padding: 80px 24px;
-      background: var(--cream-dark);
-    }
-    .why-minute-section h2 {
-      text-align: center;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-    .why-minute-section h2 em { color: var(--terracotta); font-style: normal; }
-    .why-minute-subtitle {
-      text-align: center;
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 580px;
-      margin: 0 auto 48px;
-      line-height: 1.6;
-    }
-    .why-minute-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .why-card {
-      background: white;
-      border-radius: 20px;
-      padding: 32px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: all 0.3s ease;
-    }
-    .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .why-card.why-featured {
-      background: var(--navy);
-      border: 2px solid var(--terracotta);
-      box-shadow: var(--shadow-lg), var(--shadow-glow);
-    }
-    .why-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-    .why-card.why-featured .why-card-header { border-color: rgba(255,255,255,0.08); }
-    .why-plan-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-      color: var(--navy);
-    }
-    .why-card.why-featured .why-plan-name { color: var(--cream); }
-    .why-plan-price {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--terracotta-light);
-    }
-    .why-minutes-block {
-      background: rgba(196,112,75,0.07);
-      border-radius: 10px;
-      padding: 14px 16px;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    .why-card.why-featured .why-minutes-block { background: rgba(196,112,75,0.15); }
-    .why-minutes-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      color: var(--terracotta);
-      line-height: 1;
-    }
-    .why-minutes-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-    .why-card.why-featured .why-minutes-label { color: rgba(245,240,235,0.55); }
-    .why-cost-block {
-      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
-      border-radius: 10px;
-      padding: 14px 16px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .why-cost-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
-      color: white;
-      line-height: 1;
-    }
-    .why-cost-label {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.85);
-      margin-top: 4px;
-    }
-    .why-includes { list-style: none; }
-    .why-includes li {
-      padding: 5px 0;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .why-card.why-featured .why-includes li { color: rgba(245,240,235,0.75); }
-    .why-includes li::before {
-      content: '✓';
-      color: var(--green);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    /* ============ PRICING VALUE BANNER ============ */
-    .pvb-wrap { text-align: center; margin-bottom: 40px; }
-    .pricing-value-banner {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, rgba(196,112,75,0.1), rgba(196,112,75,0.04));
-      border: 1px solid rgba(196,112,75,0.28);
-      border-radius: 50px;
-      padding: 11px 26px;
-      font-size: 0.97rem;
-      color: var(--navy);
-    }
-    .pricing-value-banner .pvb-icon { color: var(--gold); }
-    .pricing-value-banner strong { color: var(--terracotta); font-weight: 700; }
-
-    /* ============ MINUTE OPTIONS (CALCULATOR) ============ */
-    .min-options {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-    .min-opt {
-      flex: 1;
-      min-width: 72px;
-      padding: 10px 6px;
-      border: 2px solid var(--cream-dark);
-      background: white;
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.87rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-align: center;
-    }
-    .min-opt:hover {
-      border-color: var(--terracotta);
-      color: var(--terracotta);
-      background: rgba(196,112,75,0.05);
-    }
-    .min-opt.active {
-      background: var(--terracotta);
-      border-color: var(--terracotta);
-      color: white;
-      box-shadow: 0 2px 10px rgba(196,112,75,0.35);
-    }
-    .min-rate-note {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: var(--cream-dark);
-      border-radius: 12px;
-      padding: 14px 16px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-    .min-rate-note strong { color: var(--terracotta); }
-
-    /* ============ CALCULATOR SECTION ============ */
-    .calc-section {
-      padding: 80px 24px;
-      background: var(--cream);
-    }
-    .calc-section h2 {
-      text-align: center;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-    .calc-section h2 em { color: var(--terracotta); font-style: normal; }
-    .calc-subtitle {
-      text-align: center;
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 560px;
-      margin: 0 auto 48px;
-      line-height: 1.6;
-    }
-    .calc-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      max-width: 920px;
-      margin: 0 auto;
-      align-items: start;
-    }
-    .calc-inputs {
+    .checkout-overlay.open { display: flex; }
+    .checkout-modal {
       background: white;
       border-radius: 20px;
       padding: 36px 32px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-    .calc-input-group { margin-bottom: 32px; }
-    .calc-input-group:last-child { margin-bottom: 0; }
-    .calc-input-group > label {
-      display: block;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--navy);
-      margin-bottom: 20px;
-    }
-    .calc-slider-wrap { position: relative; padding-bottom: 28px; }
-    .calc-slider {
-      -webkit-appearance: none;
-      appearance: none;
       width: 100%;
-      height: 6px;
-      border-radius: 3px;
-      background: #F0E8DE;
-      outline: none;
-      cursor: pointer;
-    }
-    .calc-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--terracotta);
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(196,112,75,0.4);
-      border: 3px solid white;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .calc-slider::-webkit-slider-thumb:hover {
-      transform: scale(1.15);
-      box-shadow: 0 4px 16px rgba(196,112,75,0.55);
-    }
-    .calc-slider::-moz-range-thumb {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--terracotta);
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(196,112,75,0.4);
-      border: 3px solid white;
-    }
-    .calc-slider-ticks {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-    .calc-slider-ticks span {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-weight: 600;
-      text-align: center;
-      width: 20%;
-    }
-    .calc-slider-val {
-      display: inline-block;
-      background: rgba(196,112,75,0.1);
-      color: var(--terracotta);
-      border-radius: 50px;
-      padding: 5px 16px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      margin-top: 10px;
-    }
-    .calc-duration-box {
-      background: var(--cream-dark);
-      border-radius: 14px;
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .calc-duration-icon { font-size: 1.6rem; flex-shrink: 0; }
-    .calc-duration-val {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .calc-duration-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-      margin-top: 3px;
-    }
-    .calc-result {
-      background: var(--navy);
-      border-radius: 20px;
-      padding: 36px 32px;
-      box-shadow: var(--shadow-lg), var(--shadow-glow);
-      text-align: center;
-      border: 2px solid var(--terracotta);
+      max-width: 420px;
       position: relative;
-      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      animation: checkoutScaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     }
-    .calc-result::before {
-      content: '';
+    @keyframes checkoutScaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .checkout-close {
       position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(196,112,75,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .calc-result-header {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: rgba(245,240,235,0.4);
-      margin-bottom: 8px;
-    }
-    .calc-result-plan {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.7rem;
-      color: var(--gold);
-      margin-bottom: 24px;
-      transition: all 0.3s ease;
-    }
-    .calc-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .calc-stat-box {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      padding: 16px 10px;
-    }
-    .calc-stat-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      color: var(--terracotta-light);
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: rgba(0,0,0,0.05);
+      border-radius: 50%;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      cursor: pointer;
       line-height: 1;
-      margin-bottom: 4px;
-      transition: all 0.3s ease;
+      transition: background 0.2s ease;
     }
-    .calc-stat-lbl {
-      font-size: 0.73rem;
-      color: rgba(245,240,235,0.45);
-      line-height: 1.3;
-    }
-    .calc-price-block {
-      background: rgba(196,112,75,0.1);
-      border: 1px solid rgba(196,112,75,0.22);
-      border-radius: 14px;
-      padding: 20px 16px;
-      margin-bottom: 20px;
-    }
-    .calc-price-lbl {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: rgba(245,240,235,0.45);
-      margin-bottom: 10px;
-    }
-    .calc-price {
+    .checkout-close:hover { background: rgba(0,0,0,0.1); }
+    .checkout-modal-header { text-align: center; margin-bottom: 24px; }
+    .checkout-plan-name {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.8rem;
-      color: var(--cream);
-      line-height: 1;
-      margin-bottom: 10px;
-      transition: all 0.3s ease;
+      font-size: 1.4rem;
+      color: var(--navy);
     }
-    .calc-per-min {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
-      color: white;
-      padding: 7px 18px;
-      border-radius: 50px;
-      font-size: 0.9rem;
+    .checkout-plan-price {
+      font-size: 1rem;
+      color: var(--terracotta);
       font-weight: 700;
-      transition: all 0.3s ease;
+      margin-top: 4px;
     }
-    .calc-cta-btn {
+    .checkout-form { display: flex; flex-direction: column; gap: 16px; }
+    .checkout-label {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .checkout-label input {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      transition: border-color 0.2s ease;
+    }
+    .checkout-label input:focus { outline: none; border-color: var(--terracotta); }
+    .checkout-error {
+      display: none;
+      font-size: 0.85rem;
+      color: var(--red);
+      background: rgba(231,76,60,0.08);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .checkout-error.visible { display: block; }
+    .checkout-submit {
       background: var(--green);
       color: white;
-      padding: 14px 24px;
+      padding: 15px 24px;
       border-radius: 10px;
-      font-size: 0.97rem;
+      font-size: 1rem;
       font-weight: 700;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
       border: none;
       cursor: pointer;
-      width: 100%;
-      text-decoration: none;
+      transition: all 0.3s ease;
     }
-    .calc-cta-btn:hover {
-      background: var(--green-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    .checkout-submit:hover:not(:disabled) { background: var(--green-dark); transform: translateY(-1px); }
+    .checkout-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .checkout-secure-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
-    .calc-cta-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
-    .calc-custom-note {
-      margin-top: 14px;
-      font-size: 0.82rem;
-      color: rgba(245,240,235,0.42);
-      line-height: 1.5;
-      min-height: 20px;
+    @media (max-width: 600px) {
+      .checkout-modal { padding: 28px 22px; }
     }
 
     /* ============ RESPONSIVE ============ */
@@ -1357,25 +963,18 @@
         text-align: center;
         padding: 36px 28px;
       }
-      .comparison-table { font-size: 0.82rem; }
-      .comparison-table thead th,
-      .comparison-table tbody td { padding: 10px 12px; }
-      .calc-wrapper { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
-      .calc-result { order: -1; }
+      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+      .included-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
-      .hero-plans { padding: 100px 16px 60px; min-height: 420px; }
+      .hero-plans { padding: 100px 16px 56px; min-height: 460px; }
       .hero-stats-row { gap: 24px; }
-      .free-class-section, .pricing-section, .comparison-section,
+      .free-class-section, .pricing-section, .benefits-section,
       .guarantee-section, .testimonials-plans, .faq-section,
-      .final-cta-section, .value-minute-section, .why-minute-section,
-      .calc-section { padding: 60px 16px; }
-      .calc-inputs { padding: 28px 20px; }
-      .calc-result { padding: 28px 20px; }
-      .value-minute-grid { gap: 16px; }
-      .value-minute-card { padding: 24px 28px; min-width: 160px; }
-      .vm-price { font-size: 2.4rem; }
-      .why-minute-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .final-cta-section, .included-section { padding: 56px 16px; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .hero-cta-row { flex-direction: column; align-items: stretch; }
     }
   </style>
 </head>
@@ -1386,26 +985,34 @@
 <nav class="navbar-plans">
   <div class="container-lp">
     <div class="nav-logo">Teacher <span>Adilson</span></div>
-    <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20primeira%20aula." class="nav-cta-btn" target="_blank" rel="noopener">
-      Agendar Aula &rarr;
-    </a>
+    <a href="#planos" class="nav-cta-btn">Ver Planos &rarr;</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero-plans">
   <div class="hero-plans-content">
-    <div class="hero-badge">Vagas Limitadas &mdash; Junho 2026</div>
-    <h1>Invista no Seu Futuro. Aprenda Ingl&ecirc;s com um Professor Particular por Apenas <em>R$ 0,66 por Minuto.</em></h1>
-    <p>Aulas individuais de 60 minutos, plano personalizado, foco em convers&atilde;o, carreira e entrevistas internacionais — com professor particular de +8 anos de experi&ecirc;ncia.</p>
+    <div class="hero-badge">Vagas Limitadas — Julho 2026</div>
+    <h1>Aprenda Inglês com um Professor Particular a partir de <em>R$197 por mês.</em></h1>
+    <p>Aulas particulares de 60 minutos com plano personalizado para carreira, entrevistas internacionais, tecnologia e conversação.</p>
+    <p class="hero-subtitle-trust">Professor com mais de 8 anos de experiência e mais de 200 alunos atendidos.</p>
+
+    <div class="hero-cta-row">
+      <a href="#planos" class="hero-btn-primary">Ver Planos</a>
+      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20saber%20mais%20sobre%20as%20aulas." class="hero-btn-secondary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+
     <div class="hero-stats-row">
       <div class="hero-stat">
         <div class="hero-stat-num">+8</div>
-        <div class="hero-stat-label">Anos de Experi&ecirc;ncia</div>
+        <div class="hero-stat-label">Anos de Experiência</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">+200</div>
-        <div class="hero-stat-label">Alunos Formados</div>
+        <div class="hero-stat-label">Alunos Atendidos</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">60 min</div>
@@ -1416,87 +1023,69 @@
         <div class="hero-stat-label">Fidelidade</div>
       </div>
     </div>
+
     <div class="hero-badges-row">
-      <div class="hero-badge-item">&#11088; A partir de R$ 0,66/min</div>
-      <div class="hero-badge-item">&#11088; 60 minutos completos</div>
+      <div class="hero-badge-item">&#11088; Planos a partir de R$197/mês</div>
+      <div class="hero-badge-item">&#11088; Aulas particulares de 60 minutos</div>
+      <div class="hero-badge-item">&#11088; Professor particular</div>
       <div class="hero-badge-item">&#11088; Sem fidelidade</div>
-      <div class="hero-badge-item">&#11088; Diagn&oacute;stico incluso</div>
+      <div class="hero-badge-item">&#11088; Plano personalizado</div>
     </div>
   </div>
 </section>
 
-<!-- ANCHOR BAR -->
-<div class="anchor-bar">
-  <p>Professor particular a partir de <span>R$ 0,66 por minuto</span> &bull; 60 min de aula completa &bull; Sem fidelidade &bull; <strong style="color:#25D366;">Diagn&oacute;stico incluso</strong></p>
-</div>
-
-<!-- FREE CLASS SECTION -->
+<!-- COMO FUNCIONA -->
 <section class="free-class-section">
   <div class="container-lp">
-    <h2 class="fade-in">Como Voc&ecirc; <em>Come&ccedil;a?</em></h2>
-    <p class="free-class-subtitle fade-in">N&atilde;o &eacute; uma aula qualquer. &Eacute; uma sess&atilde;o de diagn&oacute;stico completa onde voc&ecirc; descobre seu n&iacute;vel real e recebe um plano de estudos personalizado.</p>
+    <h2 class="fade-in">Como <em>Funciona?</em></h2>
+    <p class="free-class-subtitle fade-in">Três passos simples entre você e a fluência que você precisa para sua carreira.</p>
 
     <div class="free-class-steps">
       <div class="step-card fade-in">
         <div class="step-number">1</div>
         <span class="step-icon">&#128172;</span>
         <h3>Fale Comigo</h3>
-        <p>Clique no bot&atilde;o do WhatsApp e me conte seus objetivos com o ingl&ecirc;s.</p>
+        <p>Clique no botão do WhatsApp e me conte seus objetivos com o inglês.</p>
       </div>
       <div class="step-card fade-in">
         <div class="step-number">2</div>
         <span class="step-icon">&#128203;</span>
-        <h3>Diagn&oacute;stico Gr&aacute;tis</h3>
-        <p>Em 30 minutos, descubra seu n&iacute;vel real e receba um plano de estudos personalizado.</p>
+        <h3>Avaliação Personalizada</h3>
+        <p>Descubra seu nível real e receba um plano de estudos sob medida para seus objetivos.</p>
       </div>
       <div class="step-card fade-in">
         <div class="step-number">3</div>
         <span class="step-icon">&#127891;</span>
-        <h3>Escolha Seu Plano</h3>
-        <p>Sem press&atilde;o. Escolha o plano que cabe no seu bolso e no seu hor&aacute;rio.</p>
+        <h3>Escolha o Plano Ideal</h3>
+        <p>Sem pressão. Escolha o plano que cabe no seu bolso e na sua rotina.</p>
       </div>
     </div>
 
-    <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20primeira%20aula." class="free-class-cta fade-in" target="_blank" rel="noopener">
+    <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o." class="free-class-cta fade-in" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Agendar Minha Primeira Aula
+      Falar no WhatsApp
     </a>
   </div>
 </section>
 
-<!-- VALUE PER MINUTE BLOCK -->
-<section class="value-minute-section">
+<!-- POR QUE ESTUDAR COMIGO -->
+<section class="benefits-section">
   <div class="container-lp">
-    <h2 class="fade-in">Quanto Vale <em>1 Minuto</em> do Seu Futuro?</h2>
-    <p class="value-minute-subtitle fade-in">Com os planos do Teacher Adilson, voc&ecirc; investe entre R$ 0,66 e R$ 0,82 por minuto para aprender uma habilidade que pode aumentar suas oportunidades profissionais, sal&aacute;rios e acesso ao mercado internacional.</p>
+    <h2 class="fade-in">Por Que Estudar <em>Comigo?</em></h2>
+    <p class="benefits-subtitle fade-in">Um método pensado para profissionais que precisam de resultado real — não para turmas genéricas.</p>
 
-    <div class="value-minute-grid">
-      <div class="value-minute-card fade-in vm-clickable" data-target="plano-starter" tabindex="0" role="button" aria-label="Ver Plano Starter">
-        <div class="vm-plan-name">Starter</div>
-        <div class="vm-price">R$ 0,82</div>
-        <div class="vm-label">por minuto</div>
-        <div class="vm-plan-ref">R$ 197/m&ecirc;s &bull; 4 aulas</div>
-        <div class="vm-cta-hint">Ver plano ↓</div>
-      </div>
-      <div class="value-minute-card vm-highlight fade-in vm-clickable" data-target="plano-fluencia" tabindex="0" role="button" aria-label="Ver Plano Fluência">
-        <div class="vm-plan-name">Flu&ecirc;ncia &mdash; Mais Popular</div>
-        <div class="vm-price">R$ 0,72</div>
-        <div class="vm-label">por minuto</div>
-        <div class="vm-plan-ref">R$ 347/m&ecirc;s &bull; 8 aulas</div>
-        <div class="vm-cta-hint">Ver plano ↓</div>
-      </div>
-      <div class="value-minute-card fade-in vm-clickable" data-target="plano-imersao" tabindex="0" role="button" aria-label="Ver Plano Imersão">
-        <div class="vm-plan-name">Imers&atilde;o</div>
-        <div class="vm-price">R$ 0,66</div>
-        <div class="vm-label">por minuto</div>
-        <div class="vm-plan-ref">R$ 477/m&ecirc;s &bull; 12 aulas</div>
-        <div class="vm-cta-hint">Ver plano ↓</div>
-      </div>
+    <div class="benefits-grid">
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#127919;</span><div class="benefit-label">Professor fixo</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#128100;</span><div class="benefit-label">Plano individual</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#127942;</span><div class="benefit-label">+8 anos de experiência</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#127891;</span><div class="benefit-label">+200 alunos atendidos</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#128249;</span><div class="benefit-label">Aulas 100% ao vivo</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#128188;</span><div class="benefit-label">Foco em carreira</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#127760;</span><div class="benefit-label">Entrevistas internacionais</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#128187;</span><div class="benefit-label">Inglês para tecnologia</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#128337;</span><div class="benefit-label">Flexibilidade de horários</div></div>
+      <div class="benefit-item fade-in"><span class="benefit-icon">&#128275;</span><div class="benefit-label">Sem fidelidade</div></div>
     </div>
-
-    <p class="value-minute-tagline fade-in">
-      Voc&ecirc; tem acesso a um <strong style="color:var(--gold-light);">professor particular com +8 anos de experi&ecirc;ncia</strong>, aulas ao vivo de 60 minutos, material incluso, WhatsApp direto e plano personalizado — tudo por menos de <strong style="color:var(--gold-light);">R$ 1 por minuto</strong>.
-    </p>
   </div>
 </section>
 
@@ -1504,16 +1093,8 @@
 <section class="pricing-section" id="planos">
   <div class="container-lp">
     <div class="section-header">
-      <h2 class="fade-in">Escolha o Plano <em>Ideal para Voc&ecirc;</em></h2>
-      <p class="pricing-subtitle fade-in">Todos os planos incluem aulas de 60 minutos, material did&aacute;tico e acesso direto ao professor pelo WhatsApp. Sem fidelidade.</p>
-    </div>
-
-    <div class="pvb-wrap fade-in">
-      <div class="pricing-value-banner">
-        <span class="pvb-icon">&#11088;</span>
-        Apenas <strong>R$&nbsp;0,66 por minuto</strong> de aula particular com professor dedicado.
-        <span class="pvb-icon">&#11088;</span>
-      </div>
+      <h2 class="fade-in">Escolha o Plano <em>Ideal para Você</em></h2>
+      <p class="pricing-subtitle fade-in">Todos os planos incluem professor particular, aulas ao vivo de 60 minutos e plano de estudos personalizado.</p>
     </div>
 
     <div class="pricing-grid">
@@ -1521,284 +1102,70 @@
       <div class="plan-card fade-in" id="plano-starter">
         <span class="plan-icon">&#127793;</span>
         <div class="plan-name">Starter</div>
+        <div class="plan-price"><sup>R$</sup>197<span class="plan-price-suffix">/mês</span></div>
         <div class="plan-freq">1 aula por semana</div>
-        <div class="plan-price-block">
-          <div class="plan-old-price">De R$ 247</div>
-          <div class="plan-price"><sup>R$</sup>197<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/m&ecirc;s</span></div>
-          <div class="plan-per-minute-badge">&#128293; Apenas R$ 0,82/minuto</div>
-          <div class="plan-aulas-info">4 aulas de 60 minutos por m&ecirc;s</div>
-        </div>
+        <div class="plan-desc">Ideal para quem quer criar consistência no inglês.</div>
         <ul class="plan-features">
-          <li>4 aulas de 60 min/m&ecirc;s</li>
-          <li>Material did&aacute;tico incluso</li>
-          <li>WhatsApp para d&uacute;vidas r&aacute;pidas</li>
-          <li>Plano de estudos personalizado</li>
-          <li>Sem fidelidade</li>
+          <li>4 aulas particulares de 60 minutos</li>
+          <li>Material didático incluso</li>
+          <li>Suporte via WhatsApp</li>
         </ul>
-        <!-- MERCADO PAGO: configurar URL de retorno → obrigado.html?plano=starter -->
-        <a href="https://mpago.la/2WbpND9" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
-        <span class="plan-per-minute">10% off no PIX &bull; R$ 177/m&ecirc;s</span>
+        <button type="button" class="plan-cta plan-cta-outline" data-plan="starter">Quero Começar</button>
+        <span class="plan-pix-note">10% off no PIX &bull; R$ 177/mês</span>
       </div>
 
       <!-- FLUÊNCIA (FEATURED) -->
       <div class="plan-card featured fade-in" id="plano-fluencia">
         <div class="popular-badge">Mais Popular</div>
         <span class="plan-icon">&#128640;</span>
-        <div class="plan-name">Flu&ecirc;ncia</div>
+        <div class="plan-name">Fluência</div>
+        <div class="plan-price"><sup>R$</sup>347<span class="plan-price-suffix">/mês</span></div>
         <div class="plan-freq">2 aulas por semana</div>
-        <div class="plan-price-block">
-          <div class="plan-old-price">De R$ 447</div>
-          <div class="plan-price"><sup>R$</sup>347<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/m&ecirc;s</span></div>
-          <div class="plan-per-minute-badge">&#128293; Apenas R$ 0,72/minuto</div>
-          <div class="plan-aulas-info">8 aulas de 60 minutos por m&ecirc;s</div>
-        </div>
+        <div class="plan-desc">Ideal para profissionais que querem evoluir mais rápido.</div>
         <ul class="plan-features">
-          <li>8 aulas de 60 min/m&ecirc;s</li>
-          <li>Material did&aacute;tico incluso</li>
+          <li>8 aulas particulares de 60 minutos</li>
+          <li>Simulados de entrevista</li>
           <li>WhatsApp ilimitado com o professor</li>
-          <li>Simulados de entrevista mensais</li>
-          <li>Plano de estudos personalizado</li>
-          <li>Sem fidelidade</li>
         </ul>
-        <!-- MERCADO PAGO: configurar URL de retorno → obrigado.html?plano=fluencia -->
-        <a href="https://mpago.la/2XjQ9Cx" class="plan-cta plan-cta-primary" target="_blank" rel="noopener">
-          Quero Este Plano
-        </a>
-        <span class="plan-per-minute">10% off no PIX &bull; R$ 312/m&ecirc;s</span>
+        <button type="button" class="plan-cta plan-cta-primary" data-plan="fluencia">Quero Evoluir</button>
+        <span class="plan-pix-note">10% off no PIX &bull; R$ 312/mês</span>
       </div>
 
       <!-- IMERSÃO -->
       <div class="plan-card fade-in" id="plano-imersao">
         <span class="plan-icon">&#9889;</span>
-        <div class="plan-name">Imers&atilde;o</div>
+        <div class="plan-name">Imersão</div>
+        <div class="plan-price"><sup>R$</sup>477<span class="plan-price-suffix">/mês</span></div>
         <div class="plan-freq">3 aulas por semana</div>
-        <div class="plan-price-block">
-          <div class="plan-old-price">De R$ 597</div>
-          <div class="plan-price"><sup>R$</sup>477<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/m&ecirc;s</span></div>
-          <div class="plan-per-minute-badge">&#128293; Apenas R$ 0,66/minuto</div>
-          <div class="plan-aulas-info">12 aulas de 60 minutos por m&ecirc;s</div>
-        </div>
+        <div class="plan-desc">Para quem busca resultados acelerados.</div>
         <ul class="plan-features">
-          <li>12 aulas de 60 min/m&ecirc;s</li>
-          <li>Tudo do plano Flu&ecirc;ncia</li>
-          <li>Prepara&ccedil;&atilde;o intensiva para entrevistas</li>
-          <li>Feedback por &aacute;udio semanal</li>
-          <li>Resultado em 3 meses ou menos</li>
-          <li>Sem fidelidade</li>
+          <li>12 aulas particulares de 60 minutos</li>
+          <li>Preparação intensiva para entrevistas</li>
+          <li>Feedback semanal por áudio</li>
         </ul>
-        <!-- MERCADO PAGO: configurar URL de retorno → obrigado.html?plano=imersao -->
-        <a href="https://mpago.la/1UaEYBy" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Quero Este Plano</a>
-        <span class="plan-per-minute">10% off no PIX &bull; R$ 429/m&ecirc;s</span>
+        <button type="button" class="plan-cta plan-cta-outline" data-plan="imersao">Quero Alcançar Fluência</button>
+        <span class="plan-pix-note">10% off no PIX &bull; R$ 429/mês</span>
       </div>
     </div>
 
     <p class="pix-discount-note fade-in">
-      &#128176; <strong>Desconto PIX:</strong> Todos os planos t&ecirc;m 10% de desconto no pagamento via PIX. Plano trimestral com at&eacute; 15% off.
+      &#128176; <strong>Desconto PIX:</strong> Todos os planos têm 10% de desconto no pagamento via PIX. Plano trimestral com até 15% off.
     </p>
   </div>
 </section>
 
-<!-- WHY PER MINUTE SECTION -->
-<section class="why-minute-section">
+<!-- O QUE ESTÁ INCLUSO EM TODOS OS PLANOS -->
+<section class="included-section">
   <div class="container-lp">
-    <h2 class="fade-in">Por Que Falar em <em>Custo por Minuto?</em></h2>
-    <p class="why-minute-subtitle fade-in">A maioria das escolas vende aulas de 30 a 45 minutos. Aqui cada aula tem 60 minutos completos — ent&atilde;o a comparac&atilde;o honesta &eacute; pelo tempo que voc&ecirc; realmente recebe.</p>
-
-    <div class="why-minute-grid">
-      <div class="why-card fade-in">
-        <div class="why-card-header">
-          <div class="why-plan-name">Starter</div>
-          <div class="why-plan-price">R$ 197/m&ecirc;s</div>
-        </div>
-        <div class="why-minutes-block">
-          <div class="why-minutes-num">240</div>
-          <div class="why-minutes-label">minutos de aula por m&ecirc;s</div>
-        </div>
-        <div class="why-cost-block">
-          <div class="why-cost-num">R$ 0,82</div>
-          <div class="why-cost-label">por minuto de professor particular</div>
-        </div>
-        <ul class="why-includes">
-          <li>Professor particular exclusivo</li>
-          <li>Aulas ao vivo de 60 min</li>
-          <li>Material did&aacute;tico incluso</li>
-          <li>WhatsApp direto com o professor</li>
-          <li>Plano de estudos personalizado</li>
-        </ul>
-      </div>
-
-      <div class="why-card why-featured fade-in">
-        <div class="why-card-header">
-          <div class="why-plan-name">Flu&ecirc;ncia</div>
-          <div class="why-plan-price">R$ 347/m&ecirc;s</div>
-        </div>
-        <div class="why-minutes-block">
-          <div class="why-minutes-num">480</div>
-          <div class="why-minutes-label">minutos de aula por m&ecirc;s</div>
-        </div>
-        <div class="why-cost-block">
-          <div class="why-cost-num">R$ 0,72</div>
-          <div class="why-cost-label">por minuto de professor particular</div>
-        </div>
-        <ul class="why-includes">
-          <li>Professor particular exclusivo</li>
-          <li>Aulas ao vivo de 60 min</li>
-          <li>Material did&aacute;tico incluso</li>
-          <li>WhatsApp ilimitado com o professor</li>
-          <li>Simulados de entrevista mensais</li>
-          <li>Plano de estudos personalizado</li>
-        </ul>
-      </div>
-
-      <div class="why-card fade-in">
-        <div class="why-card-header">
-          <div class="why-plan-name">Imers&atilde;o</div>
-          <div class="why-plan-price">R$ 477/m&ecirc;s</div>
-        </div>
-        <div class="why-minutes-block">
-          <div class="why-minutes-num">720</div>
-          <div class="why-minutes-label">minutos de aula por m&ecirc;s</div>
-        </div>
-        <div class="why-cost-block">
-          <div class="why-cost-num">R$ 0,66</div>
-          <div class="why-cost-label">por minuto de professor particular</div>
-        </div>
-        <ul class="why-includes">
-          <li>Professor particular exclusivo</li>
-          <li>Aulas ao vivo de 60 min</li>
-          <li>Material did&aacute;tico incluso</li>
-          <li>WhatsApp ilimitado com o professor</li>
-          <li>Prepara&ccedil;&atilde;o intensiva para entrevistas</li>
-          <li>Feedback por &aacute;udio semanal</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CALCULATOR SECTION -->
-<section class="calc-section">
-  <div class="container-lp">
-    <h2 class="fade-in">Monte seu <em>Plano Personalizado</em></h2>
-    <p class="calc-subtitle fade-in">Estude no seu ritmo. Monte um plano personalizado a partir de <strong style="color:var(--terracotta);">R$&nbsp;0,66 por minuto</strong>.</p>
-    <p class="calc-subtitle fade-in" style="margin-top:-30px;font-size:0.92rem;">Voc&ecirc; escolhe a quantidade de minutos e eu monto uma proposta sob medida para seus objetivos.</p>
-
-    <div class="calc-wrapper fade-in">
-
-      <!-- Painel de inputs -->
-      <div class="calc-inputs">
-        <div class="calc-input-group">
-          <label>Quantidade de minutos por m&ecirc;s</label>
-          <div class="min-options" id="minOptions">
-            <button class="min-opt" data-min="60">60 min</button>
-            <button class="min-opt" data-min="120">120 min</button>
-            <button class="min-opt active" data-min="240">240 min</button>
-            <button class="min-opt" data-min="480">480 min</button>
-            <button class="min-opt" data-min="720">720 min</button>
-          </div>
-          <div class="calc-slider-val" id="calcSliderVal">240 minutos por m&ecirc;s selecionados</div>
-        </div>
-
-        <div class="calc-input-group">
-          <label>Taxa por minuto</label>
-          <div class="min-rate-note">
-            <span>&#128197;</span>
-            <span>Custo fixo de <strong>R$ 0,66</strong> por minuto — professor particular dedicado, aulas de 60 min ao vivo.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Painel de resultados -->
-      <div class="calc-result">
-        <div class="calc-result-header">Total Estimado</div>
-        <div class="calc-result-plan" id="calcPlanName">Plano Personalizado</div>
-
-        <div class="calc-stats-grid">
-          <div class="calc-stat-box">
-            <div class="calc-stat-num" id="calcMinutos">240</div>
-            <div class="calc-stat-lbl">minutos de ingl&ecirc;s ao vivo</div>
-          </div>
-          <div class="calc-stat-box">
-            <div class="calc-stat-num" id="calcAulasMes">4</div>
-            <div class="calc-stat-lbl">aulas de 60 min</div>
-          </div>
-        </div>
-
-        <div class="calc-price-block">
-          <div class="calc-price-lbl">Total estimado</div>
-          <div class="calc-price" id="calcPreco">R$ 158,40</div>
-          <div class="calc-per-min" id="calcPerMin">Baseado em R$ 0,66/minuto</div>
-        </div>
-
-        <!-- ALTERAR AQUI O NÚMERO DO WHATSAPP se necessário -->
-        <a href="#" class="calc-cta-btn" id="calcCta" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Solicitar Plano Personalizado
-        </a>
-        <p class="calc-custom-note" id="calcNote"></p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON TABLE -->
-<section class="comparison-section">
-  <div class="container-lp">
-    <h2 class="fade-in">Por Que Escolher o <em>Teacher Adilson?</em></h2>
-    <p class="comparison-subtitle fade-in">Principais diferenciais e o que voc&ecirc; recebe estudando diretamente comigo.</p>
-
-    <div class="comparison-table-wrap fade-in">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Crit&eacute;rio</th>
-            <th class="highlight-col">Teacher Adilson</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Aula individual</td>
-            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td><strong>Custo por minuto</strong></td>
-            <td class="highlight-col"><strong>A partir de R$ 0,66</strong></td>
-          </tr>
-          <tr>
-            <td>Dura&ccedil;&atilde;o da aula</td>
-            <td class="highlight-col">60 min completos</td>
-          </tr>
-          <tr>
-            <td>Professor fixo</td>
-            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Experi&ecirc;ncia do professor</td>
-            <td class="highlight-col">+8 anos</td>
-          </tr>
-          <tr>
-            <td>Plano personalizado</td>
-            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Foco em carreira</td>
-            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Sem fidelidade</td>
-            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>WhatsApp direto</td>
-            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Diagn&oacute;stico de n&iacute;vel incluso</td>
-            <td class="highlight-col"><span class="check-yes">&#10003;</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <h2 class="fade-in">O Que Está Incluso em <em>Todos os Planos</em></h2>
+    <div class="included-grid">
+      <div class="included-item fade-in">Professor particular</div>
+      <div class="included-item fade-in">Aulas ao vivo de 60 minutos</div>
+      <div class="included-item fade-in">Material didático</div>
+      <div class="included-item fade-in">Plano personalizado</div>
+      <div class="included-item fade-in">WhatsApp direto</div>
+      <div class="included-item fade-in">Sem fidelidade</div>
+      <div class="included-item fade-in">Garantia de 7 dias</div>
     </div>
   </div>
 </section>
@@ -1812,7 +1179,7 @@
       </div>
       <div class="guarantee-text">
         <h2>Garantia de 7 Dias</h2>
-        <p>Se ap&oacute;s a primeira semana de aulas voc&ecirc; sentir que o m&eacute;todo n&atilde;o &eacute; para voc&ecirc;, <strong>devolvemos 100% do seu investimento</strong>. Sem perguntas, sem burocracia. Acredito tanto no meu trabalho que o risco &eacute; todo meu. Voc&ecirc; n&atilde;o tem nada a perder.</p>
+        <p>Se após a primeira semana de aulas você sentir que o método não é para você, <strong>devolvemos 100% do seu investimento</strong>. Sem perguntas, sem burocracia. Você não tem nada a perder.</p>
       </div>
     </div>
   </div>
@@ -1821,36 +1188,39 @@
 <!-- TESTIMONIALS -->
 <section class="testimonials-plans">
   <div class="container-lp">
-    <h2 class="fade-in">O Que Meus Alunos <em>Dizem</em></h2>
+    <h2 class="fade-in">O Que Meus Alunos <em>Conquistaram</em></h2>
 
     <div class="testimonials-grid">
       <div class="testimonial-card fade-in">
+        <div class="testimonial-result">&#127942; Consegui uma promoção</div>
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;Eu tinha vergonha de falar ingl&ecirc;s em reuni&otilde;es. Depois de 3 meses com o Teacher Adilson, fui promovida para uma posi&ccedil;&atilde;o que exige ingl&ecirc;s di&aacute;rio. Melhor investimento que fiz.&rdquo;</blockquote>
+        <blockquote>&ldquo;Eu tinha vergonha de falar inglês em reuniões. Depois de 3 meses com o Teacher Adilson, fui promovida para uma posição que exige inglês diário. Melhor investimento que fiz.&rdquo;</blockquote>
         <div class="testimonial-author">
           <div class="testimonial-avatar">CM</div>
           <div>
             <div class="testimonial-name">Carla M.</div>
-            <div class="testimonial-role">Analista de Marketing &bull; Plano Flu&ecirc;ncia</div>
+            <div class="testimonial-role">Analista de Marketing &bull; Plano Fluência</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial-card fade-in">
+        <div class="testimonial-result">&#127758; Passei em entrevista internacional</div>
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;Passei na entrevista em ingl&ecirc;s para uma multinacional! O simulado de entrevista que o Adilson fez comigo foi id&ecirc;ntico ao real. Recomendo demais.&rdquo;</blockquote>
+        <blockquote>&ldquo;Passei na entrevista em inglês para uma multinacional! O simulado de entrevista que o Adilson fez comigo foi idêntico ao real. Recomendo demais.&rdquo;</blockquote>
         <div class="testimonial-author">
           <div class="testimonial-avatar">RF</div>
           <div>
             <div class="testimonial-name">Rafael F.</div>
-            <div class="testimonial-role">Desenvolvedor &bull; Plano Imers&atilde;o</div>
+            <div class="testimonial-role">Desenvolvedor &bull; Plano Imersão</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial-card fade-in">
+        <div class="testimonial-result">&#128483; Hoje participo de reuniões em inglês</div>
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;Comecei do zero absoluto. Hoje consigo assistir s&eacute;ries sem legenda e me comunicar com colegas estrangeiros. O plano Starter &eacute; perfeito pra quem tem pouco tempo.&rdquo;</blockquote>
+        <blockquote>&ldquo;Comecei do zero absoluto. Hoje consigo assistir séries sem legenda e me comunicar com colegas estrangeiros. O plano Starter é perfeito pra quem tem pouco tempo.&rdquo;</blockquote>
         <div class="testimonial-author">
           <div class="testimonial-avatar">JL</div>
           <div>
@@ -1872,42 +1242,42 @@
       <div class="faq-item fade-in">
         <button class="faq-question">Posso cancelar a qualquer momento?</button>
         <div class="faq-answer">
-          <p>Sim! N&atilde;o existe fidelidade nem multa de cancelamento. Basta me avisar pelo WhatsApp at&eacute; 5 dias antes do pr&oacute;ximo vencimento. Al&eacute;m disso, nos primeiros 7 dias voc&ecirc; tem garantia de reembolso total.</p>
+          <p>Sim! Não existe fidelidade nem multa de cancelamento. Basta me avisar pelo WhatsApp até 5 dias antes do próximo vencimento. Além disso, nos primeiros 7 dias você tem garantia de reembolso total.</p>
         </div>
       </div>
 
       <div class="faq-item fade-in">
-        <button class="faq-question">Sou iniciante total. Esse curso &eacute; para mim?</button>
+        <button class="faq-question">Sou iniciante total. Esse curso é para mim?</button>
         <div class="faq-answer">
-          <p>Com certeza! Mais de 60% dos meus alunos come&ccedil;aram do zero. O plano de estudos &eacute; 100% personalizado para o seu n&iacute;vel e ritmo. N&atilde;o existe julgamento &mdash; apenas evolu&ccedil;&atilde;o constante.</p>
+          <p>Com certeza! Mais de 60% dos meus alunos começaram do zero. O plano de estudos é 100% personalizado para o seu nível e ritmo. Não existe julgamento &mdash; apenas evolução constante.</p>
         </div>
       </div>
 
       <div class="faq-item fade-in">
         <button class="faq-question">Como funcionam as aulas?</button>
         <div class="faq-answer">
-          <p>As aulas s&atilde;o 100% online e ao vivo, via Google Meet ou Zoom. Cada aula tem 60 minutos e &eacute; focada em conversa&ccedil;&atilde;o, vocabul&aacute;rio pr&aacute;tico e situa&ccedil;&otilde;es reais do mercado de trabalho. Voc&ecirc; escolhe os hor&aacute;rios que melhor se encaixam na sua rotina.</p>
+          <p>As aulas são 100% online e ao vivo, via Google Meet ou Zoom. Cada aula tem 60 minutos e é focada em conversação, vocabulário prático e situações reais do mercado de trabalho. Você escolhe os horários que melhor se encaixam na sua rotina.</p>
         </div>
       </div>
 
       <div class="faq-item fade-in">
         <button class="faq-question">Posso trocar de plano depois?</button>
         <div class="faq-answer">
-          <p>Sim! Voc&ecirc; pode fazer upgrade ou downgrade a qualquer momento. Muitos alunos come&ccedil;am com o Starter e migram para o Flu&ecirc;ncia quando veem os resultados. A mudan&ccedil;a &eacute; feita no pr&oacute;ximo ciclo de pagamento.</p>
+          <p>Sim! Você pode fazer upgrade ou downgrade a qualquer momento. Muitos alunos começam com o Starter e migram para o Fluência quando veem os resultados. A mudança é feita no próximo ciclo de pagamento.</p>
         </div>
       </div>
 
       <div class="faq-item fade-in">
-        <button class="faq-question">Qual a diferen&ccedil;a entre o Teacher Adilson e a Alian&ccedil;a Am&eacute;rica?</button>
+        <button class="faq-question">Qual a diferença entre o Teacher Adilson e a Aliança América?</button>
         <div class="faq-answer">
-          <p>A Alian&ccedil;a oferece aulas de 30-45 minutos com professores rotativos e exige 3 meses de fidelidade. Comigo, voc&ecirc; tem aulas de 60 minutos com o mesmo professor dedicado, foco em carreira e mercado de trabalho, acesso direto pelo WhatsApp e zero fidelidade. O custo por minuto &eacute; praticamente o mesmo.</p>
+          <p>A Aliança oferece aulas de 30-45 minutos com professores rotativos e exige 3 meses de fidelidade. Comigo, você tem aulas de 60 minutos com o mesmo professor dedicado, foco em carreira e mercado de trabalho, acesso direto pelo WhatsApp e zero fidelidade &mdash; com planos a partir de R$ 197 por mês.</p>
         </div>
       </div>
 
       <div class="faq-item fade-in">
-        <button class="faq-question">Quais formas de pagamento s&atilde;o aceitas?</button>
+        <button class="faq-question">Quais formas de pagamento são aceitas?</button>
         <div class="faq-answer">
-          <p>Aceito PIX (com 10% de desconto), cart&atilde;o de cr&eacute;dito e transfer&ecirc;ncia banc&aacute;ria. O pagamento &eacute; mensal, sem surpresas. Para planos trimestrais, o desconto chega a 15%.</p>
+          <p>Aceito PIX (com 10% de desconto), cartão de crédito e transferência bancária. O pagamento é mensal, sem surpresas. Para planos trimestrais, o desconto chega a 15%.</p>
         </div>
       </div>
     </div>
@@ -1918,18 +1288,18 @@
 <section class="final-cta-section">
   <div class="final-cta-content">
     <h2 class="fade-in">Pronto Para <em>Transformar</em> Sua Carreira?</h2>
-    <p class="fade-in">12 meses v&atilde;o passar de qualquer forma. A diferen&ccedil;a &eacute; o que voc&ecirc; faz com eles. Agende sua primeira aula agora e d&ecirc; o primeiro passo.</p>
-    <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20primeira%20aula." class="final-cta-btn fade-in" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Agendar Minha Primeira Aula
+    <p class="fade-in">12 meses vão passar de qualquer forma. A diferença é o que você faz com eles.</p>
+    <p class="fade-in final-cta-tagline">Escolha o plano ideal e comece ainda esta semana.</p>
+    <a href="#planos" class="final-cta-btn fade-in">
+      Escolher Meu Plano
     </a>
-    <p class="final-cta-note">Sem compromisso &bull; Sem fidelidade &bull; Resposta r&aacute;pida</p>
+    <p class="final-cta-note">Sem compromisso &bull; Sem fidelidade &bull; Resposta rápida</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer-plans">
-  <p>&copy; 2026 Teacher Adilson &mdash; Professor Particular de Ingl&ecirc;s &bull; <a href="https://www.instagram.com/adilson_holandez/" target="_blank" rel="noopener">@adilson_holandez</a></p>
+  <p>&copy; 2026 Teacher Adilson &mdash; Professor Particular de Inglês &bull; <a href="https://www.instagram.com/adilson_holandez/" target="_blank" rel="noopener">@adilson_holandez</a></p>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
@@ -1937,9 +1307,36 @@
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- CHECKOUT MODAL -->
+<div class="checkout-overlay" id="checkoutOverlay" aria-hidden="true">
+  <div class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutPlanName">
+    <button type="button" class="checkout-close" id="checkoutClose" aria-label="Fechar">&times;</button>
+    <div class="checkout-modal-header">
+      <div class="checkout-plan-name" id="checkoutPlanName">Plano</div>
+      <div class="checkout-plan-price" id="checkoutPlanPrice">R$0/mês</div>
+    </div>
+    <form id="checkoutForm" class="checkout-form" novalidate>
+      <label class="checkout-label">
+        Nome completo
+        <input type="text" id="checkoutName" name="name" required minlength="2" maxlength="120" autocomplete="name">
+      </label>
+      <label class="checkout-label">
+        E-mail
+        <input type="email" id="checkoutEmail" name="email" required autocomplete="email">
+      </label>
+      <label class="checkout-label">
+        WhatsApp
+        <input type="tel" id="checkoutPhone" name="phone" required minlength="8" maxlength="20" placeholder="(11) 99999-9999" autocomplete="tel">
+      </label>
+      <div class="checkout-error" id="checkoutError" role="alert"></div>
+      <button type="submit" class="checkout-submit" id="checkoutSubmit">Continuar para pagamento</button>
+      <p class="checkout-secure-note">&#128274; Pagamento processado com seguran&ccedil;a pelo Mercado Pago</p>
+    </form>
+  </div>
+</div>
+
 <!-- ============ JAVASCRIPT ============ -->
 <script>
-  // Scroll animation observer
   document.addEventListener('DOMContentLoaded', function() {
     // Fade-in on scroll
     var fadeElements = document.querySelectorAll('.fade-in');
@@ -1973,77 +1370,139 @@
       btn.addEventListener('click', function() {
         var item = btn.parentElement;
         var isOpen = item.classList.contains('active');
-        // Close all
         document.querySelectorAll('.faq-item').forEach(function(i) {
           i.classList.remove('active');
         });
-        // Open clicked if it was closed
         if (!isOpen) {
           item.classList.add('active');
         }
       });
     });
 
-    // Value-card → Plan navigation
-    (function() {
-      function navigateToPlan(targetId) {
-        var target = document.getElementById(targetId);
-        if (!target) return;
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(function() {
-          target.classList.add('highlight-plan');
-          setTimeout(function() {
-            target.classList.remove('highlight-plan');
-          }, 2000);
-        }, 600);
+    // ==============================================
+    // CHECKOUT — abre o modal, coleta os dados e chama o backend.
+    // Nunca navega direto pra um link do Mercado Pago: o checkoutUrl
+    // vem sempre de POST /checkout (Preference criada via API oficial,
+    // preço lido só de config/plans.js no servidor).
+    // ==============================================
+    (function () {
+      var overlay = document.getElementById('checkoutOverlay');
+      var closeBtn = document.getElementById('checkoutClose');
+      var form = document.getElementById('checkoutForm');
+      var planNameEl = document.getElementById('checkoutPlanName');
+      var planPriceEl = document.getElementById('checkoutPlanPrice');
+      var errorEl = document.getElementById('checkoutError');
+      var submitBtn = document.getElementById('checkoutSubmit');
+      var currentPlanKey = null;
+
+      if (!overlay || !window.MetaPixelEvents) return;
+
+      function showError(msg) {
+        errorEl.textContent = msg;
+        errorEl.classList.add('visible');
+      }
+      function hideError() {
+        errorEl.textContent = '';
+        errorEl.classList.remove('visible');
       }
 
-      document.querySelectorAll('.vm-clickable').forEach(function(card) {
-        card.addEventListener('click', function() {
-          navigateToPlan(card.getAttribute('data-target'));
-        });
-        card.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            navigateToPlan(card.getAttribute('data-target'));
+      function openModal(planKey) {
+        window.MetaPixelEvents.plansLoaded.then(function () {
+          var plan = window.MetaPixelEvents.PLANS[planKey];
+          if (!plan) {
+            console.warn('[Checkout] Plano desconhecido ou ainda não carregado: ' + planKey);
+            return;
           }
+          currentPlanKey = planKey;
+          planNameEl.textContent = 'Plano ' + plan.name;
+          planPriceEl.textContent = 'R$ ' + plan.value + '/mês';
+          hideError();
+          form.reset();
+          overlay.classList.add('open');
+          overlay.setAttribute('aria-hidden', 'false');
+          document.getElementById('checkoutName').focus();
+
+          // SelectPlan dispara ao abrir o modal — é aqui que o
+          // interesse num plano específico fica claro.
+          window.MetaPixelEvents.trackSelectPlan(planKey);
         });
-      });
-    })();
-
-    // Minute Calculator
-    (function() {
-      var RATE = 0.66;
-      var selectedMin = 240;
-
-      function formatBRL(value) {
-        return 'R$ ' + value.toFixed(2).replace('.', ',');
       }
 
-      function updateCalc() {
-        var total = selectedMin * RATE;
-        var aulas = Math.round(selectedMin / 60);
-        document.getElementById('calcMinutos').textContent = selectedMin;
-        document.getElementById('calcAulasMes').textContent = aulas;
-        document.getElementById('calcPreco').textContent = formatBRL(total);
-        document.getElementById('calcSliderVal').textContent = selectedMin + ' minutos por mês selecionados';
-        var msg = 'Olá Teacher Adilson!\n\nGostaria de solicitar um plano personalizado.\n\nQuantidade de minutos desejada: ' + selectedMin + ' min/mês\nValor estimado: ' + formatBRL(total);
-        document.getElementById('calcCta').href = 'https://wa.me/5511919591579?text=' + encodeURIComponent(msg);
+      function closeModal() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
       }
 
-      var buttons = document.querySelectorAll('#minOptions .min-opt');
-      buttons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          buttons.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          selectedMin = parseInt(btn.getAttribute('data-min'));
-          updateCalc();
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+      });
+
+      document.querySelectorAll('[data-plan]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(btn.getAttribute('data-plan'));
         });
       });
 
-      updateCalc();
-    })();
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideError();
 
+        var name = document.getElementById('checkoutName').value.trim();
+        var email = document.getElementById('checkoutEmail').value.trim();
+        var phone = document.getElementById('checkoutPhone').value.trim();
+
+        if (!name || name.length < 2) { showError('Digite seu nome completo.'); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Digite um e-mail válido.'); return; }
+        if (phone.replace(/\D/g, '').length < 8) { showError('Digite um número de WhatsApp válido.'); return; }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Processando...';
+
+        // InitiateCheckout dispara aqui — no submit, com dados reais
+        // em mãos, não no clique que só abre o modal.
+        window.MetaPixelEvents.trackInitiateCheckout(currentPlanKey);
+
+        var tracking = window.MetaPixelEvents.getTrackingParams();
+
+        fetch(window.MetaPixelEvents.API_BASE_URL + '/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            planId: currentPlanKey,
+            name: name,
+            email: email,
+            phone: phone,
+            utmSource: tracking.utmSource,
+            utmMedium: tracking.utmMedium,
+            utmCampaign: tracking.utmCampaign,
+            utmTerm: tracking.utmTerm,
+            utmContent: tracking.utmContent,
+            fbclid: tracking.fbclid,
+            gclid: tracking.gclid,
+            fbp: tracking.fbp,
+            fbc: tracking.fbc
+          })
+        })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              if (!res.ok) throw new Error(data.error || 'Não foi possível iniciar o pagamento.');
+              return data;
+            });
+          })
+          .then(function (data) {
+            window.location.href = data.checkoutUrl;
+          })
+          .catch(function (err) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Continuar para pagamento';
+            showError(err.message || 'Algo deu errado. Tente novamente ou fale conosco pelo WhatsApp.');
+          });
+      });
+    })();
   });
 </script>
 
