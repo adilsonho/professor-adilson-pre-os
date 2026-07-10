@@ -23,10 +23,18 @@ function validate() {
 
 validate();
 
+// Barra final removida — evita URL duplamente barrada ao concatenar
+// (ex: `${FRONTEND_URL}/obrigado.html`). Importa especialmente pra
+// GitHub Pages project sites, onde FRONTEND_URL já vem com path
+// (https://usuario.github.io/repo), não só um domínio raiz.
+function stripTrailingSlash(url) {
+  return url.replace(/\/+$/, '');
+}
+
 const env = {
   NODE_ENV: process.env.NODE_ENV || 'development',
   PORT: Number(process.env.PORT) || 3000,
-  FRONTEND_URL: process.env.FRONTEND_URL,
+  FRONTEND_URL: stripTrailingSlash(process.env.FRONTEND_URL),
   // URL pública deste backend — usada como notification_url nas
   // Preferences do Mercado Pago (Módulo 3 escuta em BACKEND_URL/webhook/mercadopago).
   BACKEND_URL: process.env.BACKEND_URL,

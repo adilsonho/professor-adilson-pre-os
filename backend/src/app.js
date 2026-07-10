@@ -20,8 +20,16 @@ const app = express();
 // (Módulo 4) e os rate limiters abaixo dependem de req.ip real.
 app.set('trust proxy', 1);
 
+// O header Origin que o navegador manda é sempre só scheme+host+port
+// — nunca inclui path. FRONTEND_URL pode ter path (GitHub Pages
+// project site: https://usuario.github.io/repo) porque também é
+// usado pra montar os back_urls do Mercado Pago — então derivamos só
+// o origin daqui pra CORS, em vez de comparar a URL inteira (isso
+// bloquearia 100% das requisições reais quando FRONTEND_URL tem path).
+const frontendOrigin = new URL(env.FRONTEND_URL).origin;
+
 app.use(helmet());
-app.use(cors({ origin: env.FRONTEND_URL }));
+app.use(cors({ origin: frontendOrigin }));
 app.use(compression());
 // Nenhum payload legítimo (checkout, analytics, webhook do Mercado
 // Pago) chega perto disso — limite explícito em vez do default.
