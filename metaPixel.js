@@ -31,7 +31,7 @@
   var PIXEL_ID = '871942722527879';
 
   // ALTERAR AQUI ANTES DO DEPLOY — URL pública do backend.
-  var API_BASE_URL = 'http://localhost:3000';
+  var API_BASE_URL = 'professor-adilson-pre-os-production.up.railway.app';
 
   // Populado via GET /plans (config/plans.js é a fonte única de
   // verdade — nada aqui hardcoda preço). PLANS fica vazio até a
