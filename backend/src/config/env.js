@@ -12,11 +12,25 @@ const REQUIRED_VARS = [
   'META_ACCESS_TOKEN',
 ];
 
+// URLs sem protocolo já causaram 3 bugs de produção diferentes nesta
+// aplicação (metaPixel.js, CORS, notification_url do Mercado Pago) —
+// todos silenciosos, só descobertos tentando reproduzir o problema na
+// prática. Falhar aqui, alto e claro, no boot, é mais barato que isso.
+const URL_VARS = ['FRONTEND_URL', 'BACKEND_URL'];
+
 function validate() {
   const missing = REQUIRED_VARS.filter((key) => !process.env[key] || process.env[key].trim() === '');
   if (missing.length > 0) {
     throw new Error(
       `Variáveis de ambiente obrigatórias ausentes: ${missing.join(', ')}. Confira o .env contra o .env.example.`
+    );
+  }
+
+  const malformed = URL_VARS.filter((key) => !/^https?:\/\//.test(process.env[key]));
+  if (malformed.length > 0) {
+    throw new Error(
+      `Variáveis de ambiente com URL inválida (falta http:// ou https://): ${malformed.join(', ')}. ` +
+        `Valor atual: ${malformed.map((key) => `${key}=${process.env[key]}`).join(', ')}`
     );
   }
 }
