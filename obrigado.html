@@ -459,8 +459,11 @@
         <p id="heroDesc">Aguarde um instante enquanto confirmamos o status do seu pagamento junto ao Mercado Pago.</p>
       </div>
 
-      <!-- Confirmation Card -->
-      <div class="confirm-card">
+      <!-- Confirmation Card — só faz sentido quando o pagamento está
+           realmente aprovado; escondido via JS pros outros estados
+           (showState), pra não mostrar "Pagamento aprovado" junto de
+           um título dizendo "em análise". -->
+      <div class="confirm-card" id="confirmCard">
         <div class="confirm-card-title">Resumo da sua compra</div>
         <ul class="confirm-items">
           <li class="confirm-item">
@@ -595,6 +598,12 @@
     function showState(state, config) {
       config = config || {};
       var nome = config.nome || 'escolhido';
+
+      // Só existe uma leitura de "Pagamento aprovado" na página inteira
+      // — esse card. Some pra qualquer estado que não seja aprovado, pra
+      // nunca contradizer o título (ex: "em análise" + "aprovado" juntos).
+      var confirmCard = document.getElementById('confirmCard');
+      if (confirmCard) confirmCard.style.display = state === 'approved' ? '' : 'none';
 
       if (state === 'approved') {
         document.getElementById('heroTitle').innerHTML = config.titulo || 'Pagamento Recebido com <em>Sucesso!</em> &#127881;';

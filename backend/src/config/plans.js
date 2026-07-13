@@ -21,6 +21,15 @@ const PLANS = Object.freeze({
     price: 477,
     currency: 'BRL',
   }),
+  // TEMPORÁRIO — só pra validar o fluxo de pagamento real em produção
+  // (checkout -> webhook -> banco). Nenhum botão do site aponta pra
+  // isso. Remover depois de confirmar o teste.
+  teste_r1: Object.freeze({
+    id: 'teste_r1',
+    name: 'TESTE — não é uma compra real',
+    price: 1,
+    currency: 'BRL',
+  }),
 });
 
 function listPlans() {
