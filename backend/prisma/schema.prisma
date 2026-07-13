@@ -16,10 +16,16 @@ datasource db {
 
 // Precisa ficar em sincronia manual com as chaves de src/config/plans.js
 // — Prisma não permite importar um objeto JS pra dentro do schema.
+// `teste_r1` existe só pra validar o fluxo de pagamento real em
+// produção com valor baixo (R$1) sem tocar no preço dos planos reais
+// — nunca é exposto em config/plans.js em produção normal, só quando
+// ativamente testando. Postgres não permite remover valor de enum
+// facilmente, então fica aqui — inofensivo, sem custo, mesmo sem uso.
 enum PlanId {
   starter
   fluencia
   imersao
+  teste_r1
 }
 
 // Estágio do relacionamento com o aluno. "lead" e "inactive" existem

@@ -22,8 +22,9 @@ const PLANS = Object.freeze({
     currency: 'BRL',
   }),
   // TEMPORÁRIO — só pra validar o fluxo de pagamento real em produção
-  // (checkout -> webhook -> banco). Nenhum botão do site aponta pra
-  // isso. Remover depois de confirmar o teste.
+  // com valor baixo. Nenhum botão do site aponta pra isso (só acessível
+  // chamando a API direto). Remover depois de confirmar o teste — o
+  // valor do enum no banco fica, mas isso é inofensivo (ver schema.prisma).
   teste_r1: Object.freeze({
     id: 'teste_r1',
     name: 'TESTE — não é uma compra real',
