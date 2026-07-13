@@ -11,19 +11,37 @@ const paymentRepository = require('../repositories/payment.repository');
 const analyticsEventRepository = require('../repositories/analyticsEvent.repository');
 const { runInTransaction } = require('../repositories/transaction.repository');
 
+// Student só guarda um campo `name` (nunca pedimos nome/sobrenome
+// separado no checkout) — o Mercado Pago recomenda mandar
+// payer.last_name pra melhorar o índice de aprovação (reduz
+// falso-positivo do antifraude). Split simples: primeira palavra =
+// nome, resto = sobrenome. Nome de uma palavra só fica sem sobrenome.
+function splitName(fullName) {
+  const parts = fullName.trim().split(/\s+/);
+  return {
+    firstName: parts[0],
+    lastName: parts.slice(1).join(' ') || undefined,
+  };
+}
+
 function buildPreferenceBody({ plan, student, externalReference }) {
+  const { firstName, lastName } = splitName(student.name);
+
   return {
     items: [
       {
         id: plan.id,
         title: plan.name,
+        // Recomendação do Mercado Pago pra melhorar índice de
+        // aprovação — mesmo texto que GET /plans expõe.
+        description: plan.description,
         quantity: 1,
         currency_id: plan.currency,
         // Preço sai só daqui — nunca de algo que o frontend mandou.
         unit_price: plan.price,
       },
     ],
-    payer: { name: student.name, email: student.email },
+    payer: { name: firstName, surname: lastName, email: student.email },
     external_reference: externalReference,
     notification_url: `${env.BACKEND_URL}/webhook/mercadopago`,
     auto_return: 'approved',
