@@ -31,7 +31,10 @@ function buildPreferenceBody({ plan, student, externalReference }) {
     items: [
       {
         id: plan.id,
-        title: plan.name,
+        // O cliente nunca deve ver os nomes internos (starter/fluencia/
+        // imersao nem seus nomes curtos) na tela do Mercado Pago —
+        // mercadoPagoTitle é o texto de marca completo pra isso.
+        title: plan.mercadoPagoTitle,
         // Recomendação do Mercado Pago pra melhorar índice de
         // aprovação — mesmo texto que GET /plans expõe.
         description: plan.description,

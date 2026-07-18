@@ -21,8 +21,8 @@
   <script src="metaPixel.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>Teacher Adilson | Mentoria em Inglês para Carreira Internacional a partir de 12x de R$97</title>
-  <meta name="description" content="Programa de Mentoria em Inglês para Carreira Internacional, 6 meses de acompanhamento individual, a partir de 12x de R$97. Foco em carreira, LinkedIn, currículo e entrevistas internacionais.">
+  <title>Teacher Adilson | Mentoria em Inglês para Carreira Internacional a partir de 12x de R$48,50</title>
+  <meta name="description" content="Programa de Mentoria em Inglês para Carreira Internacional, 6 meses de acompanhamento individual, a partir de 12x de R$48,50 (ou R$582 à vista). Foco em carreira, LinkedIn, currículo e entrevistas internacionais.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -466,6 +466,7 @@
     }
     .plan-card.featured .plan-price { color: var(--gold); }
     .plan-price sup { font-size: 1.2rem; vertical-align: super; }
+    .plan-price-cents { font-size: 1.6rem; vertical-align: super; }
     .plan-price-prefix {
       display: block;
       font-size: 1rem;
@@ -481,15 +482,6 @@
       margin-top: 6px;
       font-weight: 600;
     }
-    .plan-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-top: 10px;
-      padding-bottom: 22px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-    .plan-card.featured .plan-desc { border-color: rgba(255,255,255,0.1); }
     .plan-features { list-style: none; text-align: left; margin: 22px 0 28px; }
     .plan-features li {
       padding: 8px 0;
@@ -536,20 +528,15 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 24px rgba(37,211,102,0.4);
     }
-    .plan-installment {
-      font-size: 0.88rem;
+    .plan-pix-line {
+      font-size: 0.95rem;
       color: var(--text-muted);
-      margin-top: 2px;
+      margin-top: 8px;
       font-weight: 600;
     }
-    .plan-card.featured .plan-installment { color: rgba(245,240,235,0.6); }
-    .plan-pix-footer {
-      display: block;
-      margin-top: 14px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-    .plan-card.featured .plan-pix-footer { color: rgba(245,240,235,0.55); }
+    .plan-pix-line strong { color: var(--terracotta); font-weight: 700; }
+    .plan-card.featured .plan-pix-line { color: rgba(245,240,235,0.65); }
+    .plan-card.featured .plan-pix-line strong { color: var(--gold-light); }
     .plan-highlight {
       background: rgba(196,112,75,0.08);
       border-radius: 10px;
@@ -913,18 +900,54 @@
       transition: background 0.2s ease;
     }
     .checkout-close:hover { background: rgba(0,0,0,0.1); }
-    .checkout-modal-header { text-align: center; margin-bottom: 24px; }
+    .checkout-modal-header { text-align: center; margin-bottom: 4px; }
     .checkout-plan-name {
       font-family: 'DM Serif Display', serif;
       font-size: 1.4rem;
       color: var(--navy);
     }
-    .checkout-plan-price {
-      font-size: 1rem;
+    .checkout-plan-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .checkout-plan-features {
+      list-style: none;
+      margin: 16px 0;
+      padding: 14px 16px;
+      background: rgba(196,112,75,0.06);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .checkout-plan-features li {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .checkout-plan-features li::before {
+      content: '\2713';
       color: var(--terracotta);
       font-weight: 700;
-      margin-top: 4px;
+      flex-shrink: 0;
     }
+    .checkout-plan-price-block { text-align: center; margin-bottom: 20px; }
+    .checkout-plan-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.7rem;
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+    .checkout-plan-pix {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .checkout-plan-pix strong { color: var(--terracotta); }
     .checkout-form { display: flex; flex-direction: column; gap: 16px; }
     .checkout-label {
       display: flex;
@@ -1139,10 +1162,9 @@
         <span class="plan-icon">&#127793;</span>
         <div class="plan-name">Career Start</div>
         <div class="plan-freq">Programa de 6 meses</div>
-        <div class="plan-price"><span class="plan-price-prefix">12x de</span><sup>R$</sup>97</div>
+        <div class="plan-price"><span class="plan-price-prefix">12x de</span><sup>R$</sup>48<span class="plan-price-cents">,50</span></div>
+        <div class="plan-pix-line">ou <strong>R$582</strong> à vista</div>
         <div class="plan-highlight">24 Sessões Individuais</div>
-        <div class="plan-installment">1 encontro ao vivo por semana</div>
-        <div class="plan-desc">Ideal para quem deseja conquistar confiança no inglês profissional e iniciar a preparação para oportunidades internacionais.</div>
         <ul class="plan-features">
           <li>Professor particular</li>
           <li>Plano personalizado</li>
@@ -1152,7 +1174,6 @@
           <li>Preparação para entrevistas</li>
         </ul>
         <button type="button" class="plan-cta plan-cta-outline" data-plan="starter">Começar Agora</button>
-        <span class="plan-pix-footer">ou R$582 à vista no PIX</span>
       </div>
 
       <!-- CAREER PRO (FEATURED) — id/data-plan continuam "fluencia" -->
@@ -1161,10 +1182,9 @@
         <span class="plan-icon">&#128640;</span>
         <div class="plan-name">Career Pro</div>
         <div class="plan-freq">Programa de 6 meses</div>
-        <div class="plan-price"><span class="plan-price-prefix">12x de</span><sup>R$</sup>147</div>
+        <div class="plan-price"><span class="plan-price-prefix">12x de</span><sup>R$</sup>73<span class="plan-price-cents">,50</span></div>
+        <div class="plan-pix-line">ou <strong>R$882</strong> à vista</div>
         <div class="plan-highlight">48 Sessões Individuais</div>
-        <div class="plan-installment">2 encontros ao vivo por semana</div>
-        <div class="plan-desc">Ideal para profissionais que desejam acelerar a evolução e conquistar vagas internacionais.</div>
         <ul class="plan-features">
           <li>Tudo do plano anterior</li>
           <li>Inglês para Tecnologia</li>
@@ -1174,7 +1194,6 @@
           <li>Preparação para entrevistas técnicas</li>
         </ul>
         <button type="button" class="plan-cta plan-cta-primary" data-plan="fluencia">Quero Evoluir</button>
-        <span class="plan-pix-footer">ou R$882 à vista no PIX</span>
       </div>
 
       <!-- GLOBAL CAREER — id/data-plan continuam "imersao" -->
@@ -1182,10 +1201,9 @@
         <span class="plan-icon">&#9889;</span>
         <div class="plan-name">Global Career</div>
         <div class="plan-freq">Programa de 6 meses</div>
-        <div class="plan-price"><span class="plan-price-prefix">12x de</span><sup>R$</sup>197</div>
+        <div class="plan-price"><span class="plan-price-prefix">12x de</span><sup>R$</sup>98<span class="plan-price-cents">,50</span></div>
+        <div class="plan-pix-line">ou <strong>R$1.182</strong> à vista</div>
         <div class="plan-highlight">72 Sessões Individuais</div>
-        <div class="plan-installment">3 encontros ao vivo por semana</div>
-        <div class="plan-desc">Mentoria intensiva para profissionais que querem acelerar a mudança de carreira.</div>
         <ul class="plan-features">
           <li>Tudo do plano anterior</li>
           <li>Mentoria de carreira internacional</li>
@@ -1195,7 +1213,6 @@
           <li>Acompanhamento até a conquista da vaga</li>
         </ul>
         <button type="button" class="plan-cta plan-cta-outline" data-plan="imersao">Quero Minha Vaga Internacional</button>
-        <span class="plan-pix-footer">ou R$1.182 à vista no PIX</span>
       </div>
     </div>
   </div>
@@ -1324,7 +1341,7 @@
       <div class="faq-item fade-in">
         <button class="faq-question">Qual a diferença entre o Teacher Adilson e a Aliança América?</button>
         <div class="faq-answer">
-          <p>A Aliança oferece aulas de 30-45 minutos com professores rotativos, cobrança mensal sem direção clara. Comigo, você tem aulas de 60 minutos com o mesmo professor dedicado, uma mentoria de 6 meses com objetivo definido, foco em carreira e mercado de trabalho, e acesso direto pelo WhatsApp &mdash; a partir de 12x de R$97.</p>
+          <p>A Aliança oferece aulas de 30-45 minutos com professores rotativos, cobrança mensal sem direção clara. Comigo, você tem aulas de 60 minutos com o mesmo professor dedicado, uma mentoria de 6 meses com objetivo definido, foco em carreira e mercado de trabalho, e acesso direto pelo WhatsApp &mdash; a partir de 12x de R$48,50.</p>
         </div>
       </div>
 
@@ -1367,7 +1384,12 @@
     <button type="button" class="checkout-close" id="checkoutClose" aria-label="Fechar">&times;</button>
     <div class="checkout-modal-header">
       <div class="checkout-plan-name" id="checkoutPlanName">Plano</div>
-      <div class="checkout-plan-price" id="checkoutPlanPrice">R$0</div>
+      <div class="checkout-plan-subtitle">Programa de Mentoria em Inglês (6 meses)</div>
+    </div>
+    <ul class="checkout-plan-features" id="checkoutPlanFeatures"></ul>
+    <div class="checkout-plan-price-block">
+      <div class="checkout-plan-price" id="checkoutPlanPrice">12x de R$0</div>
+      <div class="checkout-plan-pix" id="checkoutPlanPix">ou <strong>R$0</strong> à vista</div>
     </div>
     <form id="checkoutForm" class="checkout-form" novalidate>
       <label class="checkout-label">
@@ -1444,20 +1466,35 @@
       var closeBtn = document.getElementById('checkoutClose');
       var form = document.getElementById('checkoutForm');
       var planNameEl = document.getElementById('checkoutPlanName');
+      var planFeaturesEl = document.getElementById('checkoutPlanFeatures');
       var planPriceEl = document.getElementById('checkoutPlanPrice');
+      var planPixEl = document.getElementById('checkoutPlanPix');
       var errorEl = document.getElementById('checkoutError');
       var submitBtn = document.getElementById('checkoutSubmit');
       var currentPlanKey = null;
 
-      // Texto de marketing (parcela + PIX), igual ao mostrado nos cards
-      // — aproximado de propósito, não precisa bater matematicamente
-      // com plan.value (esse sim é o preço real, lido do backend, que é
-      // o que de fato é cobrado no checkout). Só pra manter o modal
-      // consistente com o que o cliente já viu no card antes de clicar.
-      var INSTALLMENT_DISPLAY = {
-        starter: { installment: '97', pix: '582' },
-        fluencia: { installment: '147', pix: '882' },
-        imersao: { installment: '197', pix: '1.182' }
+      // Texto de marketing (parcela + PIX + entregáveis), igual ao
+      // mostrado nos cards — aproximado de propósito, não precisa bater
+      // matematicamente com plan.value (esse sim é o preço real, lido
+      // do backend, que é o que de fato é cobrado no checkout). Só pra
+      // manter o modal consistente com o que o cliente já viu no card
+      // antes de clicar.
+      var PLAN_DETAILS = {
+        starter: {
+          installment: '48,50',
+          pix: '582',
+          features: ['24 sessões individuais', 'Professor exclusivo', 'Material incluso', 'Plano personalizado']
+        },
+        fluencia: {
+          installment: '73,50',
+          pix: '882',
+          features: ['48 sessões individuais', 'Professor exclusivo', 'Mentoria de LinkedIn', 'Currículo internacional', 'Preparação para entrevistas', 'Inglês para Tecnologia']
+        },
+        imersao: {
+          installment: '98,50',
+          pix: '1.182',
+          features: ['72 sessões individuais', 'Mentoria de carreira internacional', 'Preparação para entrevistas técnicas', 'Plano estratégico individual', 'LinkedIn', 'Currículo internacional', 'Feedback semanal', 'Acompanhamento até a conquista da vaga']
+        }
       };
 
       if (!overlay || !window.MetaPixelEvents) return;
@@ -1479,11 +1516,22 @@
             return;
           }
           currentPlanKey = planKey;
-          var display = INSTALLMENT_DISPLAY[planKey];
-          planNameEl.textContent = 'Programa ' + plan.name;
-          planPriceEl.textContent = display
-            ? ('12x de R$' + display.installment)
+          var details = PLAN_DETAILS[planKey];
+
+          planNameEl.textContent = plan.name;
+          planFeaturesEl.innerHTML = '';
+          (details ? details.features : []).forEach(function (feature) {
+            var li = document.createElement('li');
+            li.textContent = feature;
+            planFeaturesEl.appendChild(li);
+          });
+          planPriceEl.textContent = details
+            ? ('12x de R$' + details.installment)
             : ('R$ ' + plan.value.toLocaleString('pt-BR'));
+          planPixEl.innerHTML = details
+            ? ('ou <strong>R$' + details.pix + '</strong> à vista')
+            : '';
+
           hideError();
           form.reset();
           overlay.classList.add('open');
